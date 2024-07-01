@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public enum WeaponState { SearchTarget=0, AttackToTarget }
+public enum WeaponState { SearchTarget = 0, AttackToTarget }
 public class TowerWeapon : MonoBehaviour
 {
     [SerializeField]
@@ -47,11 +47,11 @@ public class TowerWeapon : MonoBehaviour
 
     private void RotateToTarget()
     {
-        float dx=attackTarget.position.x-transform.position.x;
-        float dy=attackTarget.position.y-transform.position.y;
+        float dx = attackTarget.position.x - transform.position.x;
+        float dy = attackTarget.position.y - transform.position.y;
 
-        float degree =Mathf.Atan2(dy,dx)*Mathf.Rad2Deg;
-        transform.rotation=Quaternion.Euler(0,0,degree);
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, degree);
     }
 
     private IEnumerator SearchTarget()
@@ -64,7 +64,7 @@ public class TowerWeapon : MonoBehaviour
             // EnemySpawner의 enemyList 안에 있는 현재 맵에 존재하는 모든 적 검사
             for (int i = 0; i < enemySpawner.EnemyList.Count; i++)
             {
-                float distance = Vector3.Distance(enemySpawner.EnemyList[i].transform.position,transform.position);
+                float distance = Vector3.Distance(enemySpawner.EnemyList[i].transform.position, transform.position);
                 if (distance <= attackRange)
                 {
                     Enemy enemy = enemySpawner.EnemyList[i].GetComponent<Enemy>();
@@ -99,7 +99,7 @@ public class TowerWeapon : MonoBehaviour
             }
             //2.타겟이 공격범위 안에 있는지 검사(공격 범위를 벗어나면 새로운 적 탐색)
             float distance = Vector3.Distance(attackTarget.position, transform.position);
-            if(distance > attackRange)
+            if (distance > attackRange)
             {
                 attackTarget = null;
                 ChangeState(WeaponState.SearchTarget);
@@ -111,13 +111,22 @@ public class TowerWeapon : MonoBehaviour
 
             //4.공격(발사체 생성)
             SpawnProjectile();
-           
+
+            if (SpawnProjectile())
+            {
+                yield return new WaitForSeconds(attackRate);
+            }
+
         }
     }
-    private void SpawnProjectile()
+    private bool SpawnProjectile()
     {
-        GameObject clone=Instantiate(projectilePrefab,spawnPoint.position, Quaternion.identity);
-        clone.GetComponent<Projectile>().Setup(attackTarget);
+        if (projectilePrefab != null && spawnPoint != null && attackTarget != null)
+        {
+            GameObject clone = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+            clone.GetComponent<Projectile>().Setup(attackTarget);
+            return true;
+        }
+        return false;
     }
 }
-

@@ -22,12 +22,15 @@ public class Enemy : MonoBehaviour
         movement2D = GetComponent<Movement2D>();
         this.enemySpawner = enemySpawner;
 
+        //적 이동경로 waypoint 설정
         wayPointCount=wayPoints.Length;
         this.wayPoints = new Transform[wayPointCount];
         this.wayPoints= wayPoints;
 
+        //적의 위치를 첫번째 wayPoint위치로 설정
         transform.position = wayPoints[currentIndex].position;
 
+        //적 이동/목표지점 설정 코루틴 시작
         StartCoroutine("OnMove");
     }
 
@@ -49,15 +52,20 @@ public class Enemy : MonoBehaviour
     {
         if(currentIndex < wayPointCount-1) 
         {
+          
            transform.position = wayPoints[currentIndex].position;
             currentIndex++; 
             Vector3 direction = (wayPoints[currentIndex].position-transform.position).normalized;
             movement2D.MoveTo(direction);
         }
-        else
+        else if(currentIndex == wayPointCount - 1)
         {
-            OnDie();
+            transform.position = wayPoints[currentIndex].position;
+            currentIndex = 0;
+            Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
+            movement2D.MoveTo(direction);
         }
+      
     }
 
     public void OnDie()
