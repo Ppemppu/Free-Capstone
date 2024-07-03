@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1879630610632181109}
   - component: {fileID: 3631172787988310784}
   - component: {fileID: -7338010167190998770}
+  - component: {fileID: -705737758449213243}
   m_Layer: 0
   m_Name: Enemy01
   m_TagString: Enemy
@@ -99,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bea505ab6e49a4989383fba745e72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0
+  gold: 10
+  spawnTime: 10
 --- !u!114 &3631172787988310784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1568e05fd4cf9b04f92ed4c57f8fa836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 1
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!58 &-7338010167190998770
 CircleCollider2D:
@@ -149,3 +151,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &-705737758449213243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016030623791194196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8f0355571c1f44d8f12bd3b0c6e1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5

@@ -10,14 +10,16 @@ public class EnemySpawner : MonoBehaviour
     private float spawnTime;
     [SerializeField]
     private Transform[] wayPoints;
-    private List<Enemy> enemyList;
+    [SerializeField]
+    private PlayerGold playerGold;
 
+    private List<Enemy> enemyList;
     public List<Enemy> EnemyList => enemyList;
+    public PlayerHP playerHP;
 
     private void Awake()
     {
         enemyList = new List<Enemy>();
-
         StartCoroutine("SpawnEnemy");
     }
     private IEnumerator SpawnEnemy()
@@ -26,18 +28,24 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject clone = Instantiate(enemyPrefab);
             Enemy enemy = clone.GetComponent<Enemy>();
-
             enemy.Setup(this, wayPoints);
             enemyList.Add(enemy);
-
+            playerHP.ChangeHP(1); 
             yield return new WaitForSeconds(spawnTime);
         }
     }
-
-    public void DestroyEnemy(Enemy enemy)
+    public void DestroyEnemy(Enemy enemy,int gold)
     {
+        playerHP.ChangeHP(-1); // 적 제거 시 HP 증가
+        playerGold.CurrentGold += gold;
         enemyList.Remove(enemy);
         Destroy(enemy.gameObject);
+    }
+
+
+    public int Enemyleft()
+    {
+        return enemyList.Count;
     }
     
 }

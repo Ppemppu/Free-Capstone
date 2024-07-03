@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,14 +9,17 @@ public class Enemy : MonoBehaviour
     private Transform[] wayPoints;
     private int currentIndex = 0;
     private Movement2D movement2D;
-    private EnemySpawner enemySpawner;
+    private EnemySpawner enemySpawner; //적의 삭제를 enemyspawner에 알려서 삭제
+
+    [SerializeField]
+    private int gold = 10;  //적 사망시 휙득 가능한 골드
 
     public float spawnTime;
 
 
     private void Start()
     {
-       spawnTime= Time.time; 
+        spawnTime= Time.time; 
     }
     public void Setup(EnemySpawner enemySpawner,Transform[] wayPoints)
     {
@@ -52,7 +56,6 @@ public class Enemy : MonoBehaviour
     {
         if(currentIndex < wayPointCount-1) 
         {
-          
            transform.position = wayPoints[currentIndex].position;
             currentIndex++; 
             Vector3 direction = (wayPoints[currentIndex].position-transform.position).normalized;
@@ -70,6 +73,7 @@ public class Enemy : MonoBehaviour
 
     public void OnDie()
     {
-        enemySpawner.DestroyEnemy(this);
+
+        enemySpawner.DestroyEnemy(this,gold);
     }
 }

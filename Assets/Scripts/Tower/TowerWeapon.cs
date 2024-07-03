@@ -11,9 +11,13 @@ public class TowerWeapon : MonoBehaviour
     [SerializeField]
     private Transform spawnPoint;        //발사체 생성 위치
     [SerializeField]
-    private float attackRate = 1f;     //공격 속도
+    private float attackRate = 0.5f;     //공격 속도
     [SerializeField]
     private float attackRange = 5.0f;    //공격 범위
+    [SerializeField]
+    private int attackDamage = 1; //공격력
+
+
     private WeaponState weaponState = WeaponState.SearchTarget; //무기의 상태
     private Transform attackTarget = null;   //공격대상
     private EnemySpawner enemySpawner;
@@ -106,27 +110,24 @@ public class TowerWeapon : MonoBehaviour
                 yield break;
             }
 
-            //3.공격속도 시간 만큼 대기
-            yield return new WaitForSeconds(attackRate);
+            
 
             //4.공격(발사체 생성)
             SpawnProjectile();
 
-            if (SpawnProjectile())
-            {
-                yield return new WaitForSeconds(attackRate);
-            }
+            //3.공격속도 시간 만큼 대기
+            yield return new WaitForSeconds(attackRate);
+
 
         }
     }
-    private bool SpawnProjectile()
+    private void SpawnProjectile()
     {
         if (projectilePrefab != null && spawnPoint != null && attackTarget != null)
         {
             GameObject clone = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-            clone.GetComponent<Projectile>().Setup(attackTarget);
-            return true;
+            clone.GetComponent<Projectile>().Setup(attackTarget,attackDamage);
+           
         }
-        return false;
     }
 }
