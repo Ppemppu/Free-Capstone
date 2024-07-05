@@ -11210,6 +11210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700341484}
   - component: {fileID: 1700341483}
+  - component: {fileID: 1700341485}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -11229,8 +11230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3684ee1a4ad6224fa4833abfd2234dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  spawnTime: 0.5
   wayPoints:
   - {fileID: 1003621222}
   - {fileID: 1161974795}
@@ -11261,6 +11260,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700341485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700341482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971b5c62501dcdf418bbef632829a737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - spawnTime: 0.5
+    maxEnemyCount: 10
+    enemyPrefabs:
+    - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
+  - spawnTime: 0.5
+    maxEnemyCount: 20
+    enemyPrefabs:
+    - {fileID: 5016030623791194196, guid: c555f5e2e19ef374588b08b762ecb51a, type: 3}
+  enemySpawner: {fileID: 1700341483}
 --- !u!4 &1700780065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400879858183300828, guid: 5d19e545e2b4c3346b3207b0cac3b0d8, type: 3}
