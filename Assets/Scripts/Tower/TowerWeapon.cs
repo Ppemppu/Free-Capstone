@@ -22,23 +22,35 @@ public class TowerWeapon : MonoBehaviour
     private Transform attackTarget = null;   //공격대상
     private EnemySpawner enemySpawner;
 
+    private Animator animator;
+
 
     public void Setup(EnemySpawner enemySpawner)
     {
         this.enemySpawner = enemySpawner;
 
-        //최초상태를 Weaponstate.SearchTarget으로 설정
+        // 최초 상태를 WeaponState.SearchTarget으로 설정
         ChangeState(WeaponState.SearchTarget);
     }
 
     public void ChangeState(WeaponState newState)
     {
-        //이전에 재생중이던 상태 종료
+        // 이전에 재생 중이던 상태 종료
         StopCoroutine(weaponState.ToString());
-        //상태 변경
+
+        // 상태 변경
         weaponState = newState;
-        //새로운 상태 재생
+
+        // 새로운 상태 재생
         StartCoroutine(newState.ToString());
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+
+        // 타워가 시작할 때 적을 검색하도록 설정
+        ChangeState(WeaponState.SearchTarget);
     }
 
     private void Update()
@@ -51,11 +63,21 @@ public class TowerWeapon : MonoBehaviour
 
     private void RotateToTarget()
     {
-        float dx = attackTarget.position.x - transform.position.x;
-        float dy = attackTarget.position.y - transform.position.y;
+        if (attackTarget != null)
+        {
+            float dx = attackTarget.position.x - transform.position.x;
 
-        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, degree);
+            Vector2 localScale = transform.localScale;
+            if (dx < 0)
+            {
+                localScale.x = Mathf.Abs(localScale.x) * -1; // 왼쪽
+            }
+            else
+            {
+                localScale.x = Mathf.Abs(localScale.x); // 오른쪽
+            }
+            transform.localScale = localScale;
+        }
     }
 
     private IEnumerator SearchTarget()
@@ -110,10 +132,14 @@ public class TowerWeapon : MonoBehaviour
                 yield break;
             }
 
-            
 
+            animator.SetTrigger("wait");
+            animator.SetTrigger("r_wait");
+           
             //4.공격(발사체 생성)
             SpawnProjectile();
+            animator.SetTrigger("attack");
+            animator.SetTrigger("r_attack");
 
             //3.공격속도 시간 만큼 대기
             yield return new WaitForSeconds(attackRate);

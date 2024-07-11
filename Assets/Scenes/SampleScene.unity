@@ -5594,7 +5594,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c9c43f6a705a243b1801412f50a3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 377164387751537577, guid: 82a46e55648278c458fa8a8c3b622a11, type: 3}
+  towerPrefabs:
+  - {fileID: 377164387751537577, guid: fe729cdc813e77d459d7e29b591549d1, type: 3}
+  - {fileID: 377164387751537577, guid: 82a46e55648278c458fa8a8c3b622a11, type: 3}
   enemySpawner: {fileID: 1700341483}
   towerBuildGold: 50
   playerGold: {fileID: 795353800}
