@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6410173781357973212}
   - component: {fileID: 5245837003756385810}
   - component: {fileID: -8569174913663964860}
-  - component: {fileID: -1723217061416248423}
+  - component: {fileID: -4912352472194385642}
   m_Layer: 0
-  m_Name: Tower2
+  m_Name: Tower5
   m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: a015112102a3a3c4cb153088cf96ee70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84bb78277543ff4478ff04d102e9cea7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 4325011771806637681}
   attackRate: 0.5
   attackRange: 2
-  attackDamage: 100
---- !u!95 &-1723217061416248423
+  attackDamage: 1
+--- !u!95 &-4912352472194385642
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 377164387751537577}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d3130fb8d6a5df04886d76bd8f4ed1c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8b942e671e6dd0c499dcefbcad6794d2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
