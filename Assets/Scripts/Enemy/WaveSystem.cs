@@ -12,7 +12,7 @@ public class WaveSystem : MonoBehaviour
     private float waveTimeleft; 
 
     public int CurrentWave => currentWaveIndex + 1;
-    public int MaxWave => waves.Length;
+    public int LeftTime => Mathf.FloorToInt(waveTimeleft);
 
 
     public void Start()
