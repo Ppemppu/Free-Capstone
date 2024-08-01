@@ -25,8 +25,9 @@ public class EnemyHP : MonoBehaviour
 
         //현재 적의 상태가 사망 상태이면 아래 코드를 실행하지 않는다.
         if (isDie == true) return;
-
+      
         currentHP -= damage;
+        Debug.Log($"Enemy took {damage} damage. Current HP: {currentHP}");
         StopCoroutine("HitAlphaAnimation");
         StartCoroutine("HitAlphaAnimation");
 

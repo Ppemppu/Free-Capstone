@@ -103,7 +103,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 4325011771806637681}
   attackRate: 0.5
   attackRange: 2
-  attackDamage: 1
+  attackDamage: 5
 --- !u!95 &-4912352472194385642
 Animator:
   serializedVersion: 5

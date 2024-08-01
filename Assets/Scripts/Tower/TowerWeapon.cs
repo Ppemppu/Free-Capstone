@@ -148,8 +148,8 @@ public class TowerWeapon : MonoBehaviour
         if (projectilePrefab != null && spawnPoint != null && attackTarget != null)
         {
             GameObject clone = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-            clone.GetComponent<Projectile>().Setup(attackTarget,attackDamage);
-           
+            clone.GetComponent<Projectile>().Setup(attackTarget,attackDamage,true,1,1f);
+            // clone.GetComponent<Projectile>().Setup(attackTarget,attackDamage,스플래시 유무,스플래시 데미지,스플래시 범위);
         }
     }
 }
