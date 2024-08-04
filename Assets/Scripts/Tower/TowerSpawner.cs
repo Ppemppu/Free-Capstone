@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TowerSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] towerPrefabs = new GameObject[2]; // 랜덤 테스트
+    private GameObject[] towerPrefabs = new GameObject[5]; // 랜덤 테스트
     [SerializeField]
     private EnemySpawner enemySpawner; // 현재 맵에 존재하는 적 리스트 정보를 얻기 위해
     [SerializeField]
@@ -31,12 +31,56 @@ public class TowerSpawner : MonoBehaviour
         playerGold.CurrentGold -= towerBuildGold;
 
         // 랜덤 테스트
-        //int randomIndex = Random.Range(0, towerPrefabs.Length);
-        GameObject selectedTowerPrefab = towerPrefabs[0];
+        int randomIndex = Random.Range(0, towerPrefabs.Length);
+        GameObject selectedTowerPrefab = towerPrefabs[randomIndex];
+
 
         // 선택한 타일의 위치에 타워 건설
         GameObject clone = Instantiate(selectedTowerPrefab, tileTransform.position, Quaternion.identity);
+        clone.transform.SetParent(tileTransform); // 타워를 타일의 자식으로 설정
         // 타워 무기에 enemySpawner 정보 전달
+
         clone.GetComponent<TowerWeapon>().Setup(enemySpawner);
+    }
+
+    public void SellTower(Transform tileTransform)
+    {
+        Tile tile = tileTransform.GetComponent<Tile>();
+        if (tile.IsBuildTower == true)
+        {
+            GameObject towerObject = FindTowerOnTile(tileTransform);
+            if (towerObject != null)
+            {
+                int sellPrice = (int)(towerBuildGold * 0.3f); // 30% 환불
+                playerGold.CurrentGold += sellPrice;
+
+                Destroy(towerObject);
+                tile.IsBuildTower = false;
+
+                Debug.Log($"Tower sold for {sellPrice} gold.");
+            }
+            else
+            {
+                Debug.LogWarning("No tower found on this tile.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No tower to sell on this tile.");
+        }
+    }
+    private GameObject FindTowerOnTile(Transform tileTransform)
+    {
+        foreach (Transform child in tileTransform)
+        {
+            foreach (GameObject prefab in towerPrefabs)
+            {
+                if (child.gameObject.name.Contains(prefab.name))
+                {
+                    return child.gameObject;
+                }
+            }
+        }
+        return null;
     }
 }
