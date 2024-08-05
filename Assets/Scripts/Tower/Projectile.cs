@@ -26,13 +26,34 @@ public class Projectile : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 direction=(target.position - transform.position).normalized;
+            if (target.position.x < transform.position.x)
+            {
+                FlipSprite(true); // 이미지 좌우 반전
+            }
+            else
+            {
+                FlipSprite(false); // 이미지 원래대로
+            }
+
+            Vector3 direction = (target.position - transform.position).normalized;
             movement2D.MoveTo(direction);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // 타겟이 없으면 발사체 삭제
         }
+    }
+
+    private void FlipSprite(bool flip)
+    {
+        Vector3 scale = transform.localScale;
+
+        if (flip)
+            scale.x = -Mathf.Abs(scale.x); // 좌우 반전
+        else
+            scale.x = Mathf.Abs(scale.x); // 원래대로
+
+        transform.localScale = scale;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

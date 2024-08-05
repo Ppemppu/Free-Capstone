@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TowerSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] towerPrefabs = new GameObject[5]; // 랜덤 테스트
+    private GameObject[] towerPrefabs = new GameObject[0]; // 랜덤 테스트
     [SerializeField]
     private EnemySpawner enemySpawner; // 현재 맵에 존재하는 적 리스트 정보를 얻기 위해
     [SerializeField]
