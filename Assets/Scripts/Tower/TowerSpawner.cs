@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 public class TowerSpawner : MonoBehaviour
 {
     [SerializeField]
+    private GameObject[] towerPrefabs = new GameObject[2];
+    [SerializeField]
     private EnemySpawner enemySpawner; // 현재 맵에 존재하는 적 리스트 정보를 얻기 위해
     [SerializeField]
     private int towerBuildGold = 50; // 타워 건설에 사용되는 골드
@@ -45,32 +47,42 @@ public class TowerSpawner : MonoBehaviour
         }
     }
 
+
     public void SellTower(Transform tileTransform)
     {
         Tile tile = tileTransform.GetComponent<Tile>();
         if (tile.IsBuildTower)
         {
-            Tower tower = tileTransform.GetComponentInChildren<Tower>();
-            if (tower != null)
+            GameObject towerObject = FindTowerOnTile(tileTransform);
+            if (towerObject != null)
             {
                 int sellPrice = (int)(towerBuildGold * 0.3f);  // 30% 환불
                 playerGold.CurrentGold += sellPrice;
 
-                Destroy(tower.gameObject);
+                Destroy(towerObject);
                 tile.IsBuildTower = false;
-
-                Debug.Log($"Tower sold for {sellPrice} gold.");
-            }
-            else
-            {
-                Debug.LogWarning("No tower found on this tile.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No tower to sell on this tile.");
+            }   
         }
     }
+
+    private GameObject FindTowerOnTile(Transform tileTransform)
+    {
+        foreach (Transform child in tileTransform)
+        {
+            foreach (var towerData in towerManager.AllTowers)
+            {
+                if (child.gameObject.name.Contains(towerData.Prefab.name))
+                {
+                    return child.gameObject;
+                }
+            }
+        }
+        return null;
+    }
+
+
+
+
     public void UpgradeWarriorTowers()
     {
         towerManager.UpgradeTowersByType(TowerType.Warrior);
