@@ -16,7 +16,7 @@ public class TowerWeapon : MonoBehaviour
     [SerializeField]
     private float attackRange = 5.0f;    // 공격 범위
     [SerializeField]
-    private int attackDamage = 1;        // 공격력
+    private float attackDamage = 1f;        // 공격력
 
     private WeaponState weaponState = WeaponState.SearchTarget; // 무기의 상태
     private Transform attackTarget = null;   // 공격대상
@@ -145,5 +145,10 @@ public class TowerWeapon : MonoBehaviour
         {
             Debug.LogWarning("발사체 프리팹, 생성 위치 또는 공격 대상이 null입니다.");
         }
+    }
+    public void UpdateStats(float newDamage, float newAttackRate)//타워 강화를 위한 함수
+    {
+        attackDamage *= newDamage;
+        attackRate *= newAttackRate;
     }
 }
