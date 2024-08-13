@@ -17,13 +17,22 @@ public class TowerWeapon : MonoBehaviour
     private float attackRange = 5.0f;    // 공격 범위
     [SerializeField]
     private float attackDamage = 1f;        // 공격력
+    [SerializeField]
+    private bool splashattack = false;      //스플래시 공격 여부
+    [SerializeField]
+    private float splashDamage = 1f;        //스플래시 데미지
 
     private WeaponState weaponState = WeaponState.SearchTarget; // 무기의 상태
     private Transform attackTarget = null;   // 공격대상
     private EnemySpawner enemySpawner;
-
+    private Tower tower;
     private Animator animator;
+    private float EnhanceDamage;
 
+    private void Awake()
+    {
+        tower = GetComponent<Tower>();
+    }
     public void Setup(EnemySpawner enemySpawner)
     {
         this.enemySpawner = enemySpawner;
@@ -46,8 +55,8 @@ public class TowerWeapon : MonoBehaviour
 
     private void Start()
     {
+        ApplyUpgrades();
         animator = GetComponent<Animator>();
-        // 타워가 시작할 때 적을 검색하도록 설정
         ChangeState(WeaponState.SearchTarget);
     }
 
@@ -139,16 +148,17 @@ public class TowerWeapon : MonoBehaviour
         if (projectilePrefab != null && spawnPoint != null && attackTarget != null)
         {
             GameObject clone = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-            clone.GetComponent<Projectile>().Setup(attackTarget, attackDamage, true, 1, 1f);
+            clone.GetComponent<Projectile>().Setup(attackTarget, attackDamage, splashattack, splashDamage, 1f);
         }
         else
         {
             Debug.LogWarning("발사체 프리팹, 생성 위치 또는 공격 대상이 null입니다.");
         }
     }
-    public void UpdateStats(float newDamage, float newAttackRate)//타워 강화를 위한 함수
+ 
+    public void ApplyUpgrades()
     {
-        attackDamage *= newDamage;
-        attackRate *= newAttackRate;
+        int level = TowerUpgradeManager.Instance.GetUpgradeLevel(tower.Data.Type);
+        attackDamage *= level;
     }
 }

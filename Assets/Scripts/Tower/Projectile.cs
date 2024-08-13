@@ -9,10 +9,10 @@ public class Projectile : MonoBehaviour
     private Transform target;
     private float damage;
     private bool isSplashDamage;
-    private int splashDamage;
+    private float splashDamage;
     private float splashRadius;
 
-    public void Setup(Transform target,float damage, bool isSplashDamage = false, int splashDamage = 0, float splashRadius = 0f)
+    public void Setup(Transform target,float damage, bool isSplashDamage = false, float splashDamage = 0, float splashRadius = 0f)
     {
         movement2D=GetComponent<Movement2D>();
         this.target = target;  //타워가 설정해준 target

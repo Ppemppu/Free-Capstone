@@ -18,31 +18,6 @@ public enum TowerRank
     Legendary
 }
 
-[Serializable]
-public class TowerData
-{
-    public TowerType Type;
-    public TowerRank Rank;
-    public GameObject Prefab;
-}
-public class Tower : MonoBehaviour
-{
-    public TowerData Data;
-    public float Damage;
-    public float attackRate;
-    public float attackRange;
-    public void Upgrade()
-    {
-        Damage += 100f;
-
-        // TowerWeapon 스크립트에 접근하여 스탯을 업데이트
-        TowerWeapon weapon = GetComponent<TowerWeapon>();
-        if (weapon != null)
-        {
-            weapon.UpdateStats(Damage, attackRate);
-        }
-    }
-}
 
 
 public class TowerManager : MonoBehaviour
@@ -57,7 +32,7 @@ public class TowerManager : MonoBehaviour
         { TowerRank.Unique, 0.08f },
         { TowerRank.Legendary, 0.02f }
     };
-    public GameObject GetRandomTowerPrefab()
+    public TowerData GetRandomTowerPrefab() //타워 랜덤 설정
     {
         float randomValue = UnityEngine.Random.value;
         float cumulativeProbability = 0.0f;
@@ -78,24 +53,18 @@ public class TowerManager : MonoBehaviour
 
                 if (selectedTowers.Count > 0)
                 {
-                    return selectedTowers[UnityEngine.Random.Range(0, selectedTowers.Count)].Prefab;
+                    return selectedTowers[UnityEngine.Random.Range(0, selectedTowers.Count)];
                 }
             }
         }
 
         return null; // 어떤 타워도 선택되지 않았을 경우
     }
-
     public void UpgradeTowersByType(TowerType type)
     {
-        foreach (var towerObject in FindObjectsOfType<Tower>())
-        {
-            if (towerObject.Data.Type == type)
-            {
-                towerObject.Upgrade();
-            }
-        }
+        TowerUpgradeManager.Instance.UpgradeTowerType(type);
     }
+
     public GameObject GetTowerPrefab(TowerType type, TowerRank rank)
     {
         foreach (var tower in AllTowers)
@@ -107,4 +76,9 @@ public class TowerManager : MonoBehaviour
         }
         return null;
     }
+    public void UpgradeArchers() => TowerUpgradeManager.Instance.UpgradeTowerType(TowerType.Archer);
+    public void UpgradeMages() => TowerUpgradeManager.Instance.UpgradeTowerType(TowerType.Mage);
+    public void UpgradeWarrior() => TowerUpgradeManager.Instance.UpgradeTowerType(TowerType.Warrior);
+
 }
+

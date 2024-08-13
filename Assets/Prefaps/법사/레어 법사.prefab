@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5245837003756385810}
   - component: {fileID: -8569174913663964860}
   - component: {fileID: -4912352472194385642}
+  - component: {fileID: 73667357030682790}
   m_Layer: 0
   m_Name: "\uB808\uC5B4 \uBC95\uC0AC"
-  m_TagString: Field
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +105,8 @@ MonoBehaviour:
   attackRate: 0.5
   attackRange: 2
   attackDamage: 1
+  splashattack: 0
+  splashDamage: 1
 --- !u!95 &-4912352472194385642
 Animator:
   serializedVersion: 5
@@ -125,6 +128,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &73667357030682790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377164387751537577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53bffec6aa74ef499392eb0e1dc3031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    Type: 1
+    Rank: 1
+    Prefab: {fileID: 377164387751537577}
 --- !u!1 &3548878333923652370
 GameObject:
   m_ObjectHideFlags: 0
