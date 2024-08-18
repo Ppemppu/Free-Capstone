@@ -18,36 +18,47 @@ public class EnemySpawner : MonoBehaviour
     public PlayerHP playerHP;
 
     private Wave currentWave;
+    private float minRandomHPIncrease;
+    private float maxRandomHPIncrease;
 
     private void Awake()
     {
         enemyList = new List<Enemy>();
     }
 
-    public void StartWave(Wave wave)
+    public void StartWave(Wave wave, float minRandom, float maxRandom)
     {
         currentWave = wave;
+        minRandomHPIncrease = minRandom;
+        maxRandomHPIncrease = maxRandom;
         StartCoroutine("SpawnEnemy");
     }
     private IEnumerator SpawnEnemy()
     {
-        //현재 웨이브에서 적을 생성한 숫자
         int spawnEnemyCount = 0;
-        while (spawnEnemyCount<currentWave.maxEnemyCount)
+        while (spawnEnemyCount < currentWave.maxEnemyCount)
         {
-            int enemyIndex = Random.Range(0,currentWave.enemyPrefabs.Length);
+            int enemyIndex = Random.Range(0, currentWave.enemyPrefabs.Length);
             GameObject clone = Instantiate(currentWave.enemyPrefabs[enemyIndex]);
             Enemy enemy = clone.GetComponent<Enemy>();
-            enemy.Setup(this,wayPoints);
+            EnemyHP enemyHP = clone.GetComponent<EnemyHP>();
+
+            // 랜덤 체력 증가 적용
+            float baseHP = enemyHP.GetMaxHP();
+            float randomHPIncrease = Random.Range(minRandomHPIncrease, maxRandomHPIncrease);
+            int totalHP = Mathf.RoundToInt(baseHP + randomHPIncrease);
+            enemyHP.SetMaxHP(totalHP);
+
+            enemy.Setup(this, wayPoints);
             enemyList.Add(enemy);
-            playerHP.ChangeHP(1); // 적 제거 시 HP 증가
+            playerHP.ChangeHP(1);
             spawnEnemyCount++;
             yield return new WaitForSeconds(currentWave.spawnTime);
         }
     }
     public void DestroyEnemy(Enemy enemy,int gold)
     {
-        playerHP.ChangeHP(-1); // 적 제거 시 HP 증가
+        playerHP.ChangeHP(-1); // 적 제거 시 라이프 값 감소
         playerGold.CurrentGold += gold;
         enemyList.Remove(enemy);
         Destroy(enemy.gameObject);

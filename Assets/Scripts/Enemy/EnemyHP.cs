@@ -14,7 +14,6 @@ public class EnemyHP : MonoBehaviour
 
     private void Awake()
     {
-        currentHP = maxHP;
         enemy = GetComponent<Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -22,7 +21,6 @@ public class EnemyHP : MonoBehaviour
     public void TakeDamage(float damage)
     {
         //적의 체력이 damage만큼 감소해서 죽을 상황 일 때 여러 타워의 공격을 동시에 받으면 enemy.onDie()함수가 여러번 실행될 수 있다.
-
         //현재 적의 상태가 사망 상태이면 아래 코드를 실행하지 않는다.
         if (isDie == true) return;
       
@@ -38,6 +36,22 @@ public class EnemyHP : MonoBehaviour
             enemy.OnDie();
         }
     }
+    public void SetMaxHP(float newMaxHP)
+    {
+        maxHP = newMaxHP;
+        currentHP = maxHP;
+    }
+    public void Initialize()
+    {
+        currentHP = maxHP;
+        isDie = false;
+    }
+    public float GetMaxHP()
+    {
+        return maxHP;
+    }
+
+
     private IEnumerator HitAlphaAnimation()
     {
         //현재 색상을 color변수에 저장

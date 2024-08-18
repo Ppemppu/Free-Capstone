@@ -8,6 +8,12 @@ public class WaveSystem : MonoBehaviour
     private Wave[] waves;
     [SerializeField]
     private EnemySpawner enemySpawner;
+    [SerializeField]
+    private float initialMinRandomHPIncrease = 5f;
+    [SerializeField]
+    private float initialMaxRandomHPIncrease = 10f;
+    [SerializeField]
+    private float randomHPIncreasePerWave = 2f;
     private int currentWaveIndex = -1;
     private float waveTimeleft; 
 
@@ -21,12 +27,14 @@ public class WaveSystem : MonoBehaviour
     }
     public void StartWave()
     {
-        if ( currentWaveIndex < waves.Length - 1)
+        if (currentWaveIndex < waves.Length - 1)
         {
             waveTimeleft = 10;
-
             currentWaveIndex++;
-            enemySpawner.StartWave(waves[currentWaveIndex]);
+            float minRandomHPIncrease = initialMinRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
+            float maxRandomHPIncrease = initialMaxRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
+            enemySpawner.StartWave(waves[currentWaveIndex], minRandomHPIncrease, maxRandomHPIncrease);
+            Debug.Log($"Wave {CurrentWave} started. Random HP increase range: {minRandomHPIncrease} - {maxRandomHPIncrease}");
         }
     }
     public void Update()

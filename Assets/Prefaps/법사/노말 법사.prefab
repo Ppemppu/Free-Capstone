@@ -105,7 +105,7 @@ MonoBehaviour:
   attackRate: 0.5
   attackRange: 2
   attackDamage: 1
-  splashattack: 0
+  splashattack: 1
   splashDamage: 1
 --- !u!95 &-4912352472194385642
 Animator:
