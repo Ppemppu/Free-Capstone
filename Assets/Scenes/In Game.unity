@@ -7219,33 +7219,9 @@ MonoBehaviour:
   - Type: 0
     Rank: 0
     Prefab: {fileID: 377164387751537577, guid: fe729cdc813e77d459d7e29b591549d1, type: 3}
-  - Type: 0
-    Rank: 1
-    Prefab: {fileID: 377164387751537577, guid: 82a46e55648278c458fa8a8c3b622a11, type: 3}
-  - Type: 0
-    Rank: 2
-    Prefab: {fileID: 377164387751537577, guid: ec7a8deb81c85444791fecb90ca62c40, type: 3}
-  - Type: 0
-    Rank: 3
-    Prefab: {fileID: 377164387751537577, guid: 8748609f60d13c444b3234a91f80ff9c, type: 3}
-  - Type: 0
+  - Type: 2
     Rank: 4
-    Prefab: {fileID: 377164387751537577, guid: 921caf2ff164820429d6ad520ece651a, type: 3}
-  - Type: 1
-    Rank: 0
-    Prefab: {fileID: 377164387751537577, guid: dde079912a9236e4ea8f34f00a47b4b3, type: 3}
-  - Type: 1
-    Rank: 1
-    Prefab: {fileID: 377164387751537577, guid: eddad8795995e6148bf8af6ebc883a07, type: 3}
-  - Type: 1
-    Rank: 2
-    Prefab: {fileID: 377164387751537577, guid: 72ccf3caf87ecb04f8c4ccbcb6d9910d, type: 3}
-  - Type: 1
-    Rank: 3
-    Prefab: {fileID: 377164387751537577, guid: 93385ea4833fd1a46b0c554b3ea842d2, type: 3}
-  - Type: 1
-    Rank: 4
-    Prefab: {fileID: 377164387751537577, guid: ed085853e2ef93d4eaeb83008d71b9d4, type: 3}
+    Prefab: {fileID: 377164387751537577, guid: b19c76325f3c89e4fbc72bd90c60dc32, type: 3}
 --- !u!4 &964439329
 Transform:
   m_ObjectHideFlags: 0
@@ -12390,6 +12366,9 @@ MonoBehaviour:
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: c555f5e2e19ef374588b08b762ecb51a, type: 3}
   enemySpawner: {fileID: 1700341483}
+  initialMinRandomHPIncrease: 5
+  initialMaxRandomHPIncrease: 10
+  randomHPIncreasePerWave: 2
 --- !u!4 &1700780065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400879858183300828, guid: 5d19e545e2b4c3346b3207b0cac3b0d8, type: 3}
