@@ -28,11 +28,20 @@ public class Projectile : MonoBehaviour
         {
             if (target.position.x < transform.position.x)
             {
-                FlipSprite(true); // 이미지 좌우 반전
+                FlipSprite(true);
             }
             else
             {
-                FlipSprite(false); // 이미지 원래대로
+                FlipSprite(false);
+            }
+
+            if (target.position.y > transform.position.y)
+            {
+                FlipSpriteY(true);
+            }
+            else
+            {
+                FlipSpriteY(false);
             }
 
             Vector3 direction = (target.position - transform.position).normalized;
@@ -49,9 +58,21 @@ public class Projectile : MonoBehaviour
         Vector3 scale = transform.localScale;
 
         if (flip)
-            scale.x = -Mathf.Abs(scale.x); // 좌우 반전
+            scale.x = -Mathf.Abs(scale.x); // x축 반전
         else
             scale.x = Mathf.Abs(scale.x); // 원래대로
+
+        transform.localScale = scale;
+    }
+
+    private void FlipSpriteY(bool flip)
+    {
+        Vector3 scale = transform.localScale;
+
+        if (flip)
+            scale.y = -Mathf.Abs(scale.y); // y축 반전
+        else
+            scale.y = Mathf.Abs(scale.y); // 원래대로
 
         transform.localScale = scale;
     }

@@ -7216,9 +7216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllTowers:
-  - Type: 0
-    Rank: 0
-    Prefab: {fileID: 377164387751537577, guid: fe729cdc813e77d459d7e29b591549d1, type: 3}
+  - Type: 2
+    Rank: 1
+    Prefab: {fileID: 377164387751537577, guid: d920dbb655c46c647aa9ed84c3e0804b, type: 3}
   - Type: 2
     Rank: 4
     Prefab: {fileID: 377164387751537577, guid: b19c76325f3c89e4fbc72bd90c60dc32, type: 3}

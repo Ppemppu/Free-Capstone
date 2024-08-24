@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f704041fca7c3de4d980289c954c29c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4292799485230956213, guid: d14fd0e9259260a45b3b42c270aee9bf, type: 3}
+  projectilePrefab: {fileID: 4292799485230956213, guid: d2005b65130025a4e8265e996565abb1, type: 3}
   spawnPoint: {fileID: 4325011771806637681}
   attackRate: 0.5
   attackRange: 2
