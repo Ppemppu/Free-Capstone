@@ -104,7 +104,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 4325011771806637681}
   attackRate: 0.1
   attackRange: 8
-  attackDamage: 8
+  attackDamage: 1
   splashattack: 0
   splashDamage: 1
 --- !u!95 &-4912352472194385642
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     Type: 2
-    Rank: 3
+    Rank: 4
     Prefab: {fileID: 377164387751537577}
 --- !u!1 &3548878333923652370
 GameObject:
