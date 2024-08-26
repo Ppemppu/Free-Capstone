@@ -102,11 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4292799485230956213, guid: db9080de01d8bea4c86bb4517def708d, type: 3}
   spawnPoint: {fileID: 4325011771806637681}
-  attackRate: 0.5
-  attackRange: 2
-  attackDamage: 1
+  attackRate: 0.75
+  attackRange: 2.5
+  attackDamage: 40
   splashattack: 1
-  splashDamage: 1
+  splashDamage: 20
 --- !u!95 &-4912352472194385642
 Animator:
   serializedVersion: 5

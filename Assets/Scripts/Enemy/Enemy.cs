@@ -59,14 +59,14 @@ public class Enemy : MonoBehaviour
            transform.position = wayPoints[currentIndex].position;
             currentIndex++; 
             Vector3 direction = (wayPoints[currentIndex].position-transform.position).normalized;
-            movement2D.MoveTo(direction);
+            movement2D.MoveTo(direction,1);
         }
         else if(currentIndex == wayPointCount - 1)
         {
             transform.position = wayPoints[currentIndex].position;
             currentIndex = 0;
             Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
-            movement2D.MoveTo(direction);
+            movement2D.MoveTo(direction,1);
         }
       
     }

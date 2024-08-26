@@ -148,7 +148,7 @@ public class TowerWeapon : MonoBehaviour
         if (projectilePrefab != null && spawnPoint != null && attackTarget != null)
         {
             GameObject clone = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-            clone.GetComponent<Projectile>().Setup(attackTarget, attackDamage, splashattack, splashDamage, 1f);
+            clone.GetComponent<Projectile>().Setup(attackTarget, attackDamage, splashattack, splashDamage, 0.75f);
         }
         else
         {
@@ -159,6 +159,7 @@ public class TowerWeapon : MonoBehaviour
     public void ApplyUpgrades()
     {
         int level = TowerUpgradeManager.Instance.GetUpgradeLevel(tower.Data.Type);
-        attackDamage *= level;
+        attackDamage *= level/10+1;
+        splashDamage *= level/10+1;
     }
 }

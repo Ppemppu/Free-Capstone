@@ -11,9 +11,9 @@ public class WaveSystem : MonoBehaviour
     [SerializeField]
     private float initialMinRandomHPIncrease = 5f;
     [SerializeField]
-    private float initialMaxRandomHPIncrease = 10f;
+    private float initialMaxRandomHPIncrease = 20f;
     [SerializeField]
-    private float randomHPIncreasePerWave = 2f;
+    private float randomHPIncreasePerWave = 5f;
     private int currentWaveIndex = -1;
     private float waveTimeleft; 
 

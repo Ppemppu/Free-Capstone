@@ -26,11 +26,11 @@ public class TowerManager : MonoBehaviour
 
     private Dictionary<TowerRank, float> rankProbabilities = new Dictionary<TowerRank, float> //타워 등급 확률
     {
-        { TowerRank.Normal, 0.4f },
-        { TowerRank.Rare, 0.3f },
-        { TowerRank.Epic, 0.2f },
-        { TowerRank.Unique, 0.08f },
-        { TowerRank.Legendary, 0.02f }
+        { TowerRank.Normal, 0.5f },
+        { TowerRank.Rare, 0f },
+        { TowerRank.Epic, 0f },
+        { TowerRank.Unique, 0f },
+        { TowerRank.Legendary, 0.5f }
     };
     public TowerData GetRandomTowerPrefab() //타워 랜덤 설정
     {

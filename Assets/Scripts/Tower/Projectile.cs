@@ -26,26 +26,10 @@ public class Projectile : MonoBehaviour
     {
         if (target != null)
         {
-            if (target.position.x < transform.position.x)
-            {
-                FlipSprite(true);
-            }
-            else
-            {
-                FlipSprite(false);
-            }
-
-            if (target.position.y > transform.position.y)
-            {
-                FlipSpriteY(true);
-            }
-            else
-            {
-                FlipSpriteY(false);
-            }
-
             Vector3 direction = (target.position - transform.position).normalized;
-            movement2D.MoveTo(direction);
+            movement2D.MoveTo(direction,10);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//투사체 회전
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
         else
         {
@@ -53,29 +37,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void FlipSprite(bool flip)
-    {
-        Vector3 scale = transform.localScale;
 
-        if (flip)
-            scale.x = -Mathf.Abs(scale.x); // x축 반전
-        else
-            scale.x = Mathf.Abs(scale.x); // 원래대로
-
-        transform.localScale = scale;
-    }
-
-    private void FlipSpriteY(bool flip)
-    {
-        Vector3 scale = transform.localScale;
-
-        if (flip)
-            scale.y = -Mathf.Abs(scale.y); // y축 반전
-        else
-            scale.y = Mathf.Abs(scale.y); // 원래대로
-
-        transform.localScale = scale;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
