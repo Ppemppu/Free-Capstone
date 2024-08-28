@@ -159,7 +159,8 @@ public class TowerWeapon : MonoBehaviour
     public void ApplyUpgrades()
     {
         int level = TowerUpgradeManager.Instance.GetUpgradeLevel(tower.Data.Type);
-        attackDamage *= level/10+1;
-        splashDamage *= level/10+1;
+        float upgradeMultiplier = Mathf.Pow(1.1f, level - 1);
+        attackDamage *= upgradeMultiplier;
+        splashDamage *= upgradeMultiplier;
     }
 }

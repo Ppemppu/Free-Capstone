@@ -60,22 +60,7 @@ public class TowerManager : MonoBehaviour
 
         return null; // 어떤 타워도 선택되지 않았을 경우
     }
-    public void UpgradeTowersByType(TowerType type)
-    {
-        TowerUpgradeManager.Instance.UpgradeTowerType(type);
-    }
 
-    public GameObject GetTowerPrefab(TowerType type, TowerRank rank)
-    {
-        foreach (var tower in AllTowers)
-        {
-            if (tower.Type == type && tower.Rank == rank)
-            {
-                return tower.Prefab;
-            }
-        }
-        return null;
-    }
     public void UpgradeArchers() => TowerUpgradeManager.Instance.UpgradeTowerType(TowerType.Archer);
     public void UpgradeMages() => TowerUpgradeManager.Instance.UpgradeTowerType(TowerType.Mage);
     public void UpgradeWarrior() => TowerUpgradeManager.Instance.UpgradeTowerType(TowerType.Warrior);

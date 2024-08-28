@@ -29,7 +29,7 @@ public class WaveSystem : MonoBehaviour
     {
         if (currentWaveIndex < waves.Length - 1)
         {
-            waveTimeleft = 10;
+            waveTimeleft = 210;
             currentWaveIndex++;
             float minRandomHPIncrease = initialMinRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
             float maxRandomHPIncrease = initialMaxRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);

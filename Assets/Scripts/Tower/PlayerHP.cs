@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHP : MonoBehaviour
 {
     [SerializeField]
-    private float maxHP =100;
+    private float maxHP =50;
     private float currentHP;
     private EnemySpawner enemySpawner;
 
