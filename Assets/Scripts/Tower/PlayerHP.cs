@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -29,8 +30,7 @@ public class PlayerHP : MonoBehaviour
     }
     private void GameOver()
     {
-        Debug.Log("Game Over!");
-        // 여기에 게임오버 시 실행할 로직 추가
+        SceneManager.LoadScene("GameOver");
     }
 
 }
