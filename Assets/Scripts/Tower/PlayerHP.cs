@@ -28,6 +28,10 @@ public class PlayerHP : MonoBehaviour
             GameOver();
         }
     }
+    public float GetHP()
+    {
+        return currentHP;
+    }
     private void GameOver()
     {
         SceneManager.LoadScene("GameOver");

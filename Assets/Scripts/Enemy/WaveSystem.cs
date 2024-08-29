@@ -15,7 +15,8 @@ public class WaveSystem : MonoBehaviour
     [SerializeField]
     private float randomHPIncreasePerWave = 5f;
     private int currentWaveIndex = -1;
-    private float waveTimeleft; 
+    private float waveTimeleft;
+    public PlayerHP playerHP;
 
     public int CurrentWave => currentWaveIndex + 1;
     public int LeftTime => Mathf.FloorToInt(waveTimeleft);
@@ -29,7 +30,7 @@ public class WaveSystem : MonoBehaviour
     {
         if (currentWaveIndex < waves.Length - 1)
         {
-            waveTimeleft = 210;
+            waveTimeleft = 80; //한 웨이브당 시간
             currentWaveIndex++;
             float minRandomHPIncrease = initialMinRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
             float maxRandomHPIncrease = initialMaxRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
@@ -42,6 +43,9 @@ public class WaveSystem : MonoBehaviour
         waveTimeleft -= Time.deltaTime;
         if (waveTimeleft <= 0)
             StartWave();
+        if (playerHP.CurrentHP == 0)
+            StartWave();
+        
     }
 }
 
