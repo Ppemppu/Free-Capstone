@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
+    public GameObject gameover_Panel;
+
     [SerializeField]
     private float maxHP =50;
     private float currentHP;
@@ -13,8 +15,9 @@ public class PlayerHP : MonoBehaviour
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
 
-    private void Awake()
+    public void Awake()
     {
+        gameover_Panel.SetActive(false);
         currentHP =0; 
     }
 
@@ -32,9 +35,10 @@ public class PlayerHP : MonoBehaviour
     {
         return currentHP;
     }
-    private void GameOver()
+    public void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        gameover_Panel.SetActive(true);
+        //SceneManager.LoadScene("GameOver");
     }
 
 }

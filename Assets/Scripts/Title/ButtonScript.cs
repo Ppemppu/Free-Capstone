@@ -5,34 +5,20 @@ using UnityEngine.SceneManagement;
 public class ButtonScript : MonoBehaviour
 {
     public Sprite Pressed_Sprite;
-
-    private Image Btn_Image;
-
-    private bool isPressed;
-
-
-    private void Start()
+    public Image Btn_Image;
+    public void Start()
     {
-        isPressed = false;
         Btn_Image = GetComponent<Image>();
     }
 
-    private void Update()
+    public void OnButtonPress()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            isPressed = true;
-            Btn_Image.sprite = Pressed_Sprite;
-        }
-        else if(Input.GetMouseButtonUp(0) && isPressed)
-        {
-            LoadNextScene();
-        }
+        Btn_Image.sprite = Pressed_Sprite; // 버튼이 눌렸을 때 스프라이트 변경
     }
 
-    private void LoadNextScene()
+    public void OnButtonRelease(string sceneName)
     {
-        SceneManager.LoadScene("In Game");
+        SceneManager.LoadScene(sceneName); // 씬 전환
     }
 
 }

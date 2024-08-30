@@ -31,7 +31,8 @@ public class WaveSystem : MonoBehaviour
     {
         if (currentWaveIndex == waves.Length-1)
         {
-            SceneManager.LoadScene("GameOver");
+            playerHP.GameOver();
+            //SceneManager.LoadScene("GameOver");
         }
         if (currentWaveIndex < waves.Length - 1)
         {
