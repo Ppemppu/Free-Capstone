@@ -54,21 +54,28 @@ public class Enemy : MonoBehaviour
 
     private void NextMoveTo()
     {
-        if(currentIndex < wayPointCount-1) 
+        if (currentIndex < wayPointCount - 1)
         {
-           transform.position = wayPoints[currentIndex].position;
-            currentIndex++; 
-            Vector3 direction = (wayPoints[currentIndex].position-transform.position).normalized;
-            movement2D.MoveTo(direction,1);
+            transform.position = wayPoints[currentIndex].position;
+            currentIndex++;
         }
-        else if(currentIndex == wayPointCount - 1)
+        else if (currentIndex == wayPointCount - 1)
         {
             transform.position = wayPoints[currentIndex].position;
             currentIndex = 0;
-            Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
-            movement2D.MoveTo(direction,1);
         }
-      
+
+        Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
+        movement2D.MoveTo(direction, 1);
+
+        if (direction.x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true; // 왼쪽을 향할 때 이미지 반전
+        }
+        else if (direction.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false; // 오른쪽을 향할 때 이미지 원래대로
+        }
     }
 
     public void OnDie()
