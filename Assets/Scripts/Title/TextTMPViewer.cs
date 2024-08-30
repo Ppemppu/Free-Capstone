@@ -40,7 +40,7 @@ public class TextTMPViewer : MonoBehaviour
     private void Update()
     {
         textPlayerHP.text = playerHP.CurrentHP + "/" + playerHP.MaxHP;
-        textPlayerGold.text=playerGold.CurrentGold.ToString();
+        textPlayerGold.text=playerGold.CurrentGold.ToString()+"G";
         textLeftTime.text = string.Format("{0}:{1:00}", (int)waveSystem.LeftTime / 60, (int)waveSystem.LeftTime % 60);
         textcurrentWave.text="WAVE"+waveSystem.CurrentWave.ToString();
         textcurrentWarriorLevel.text="LV"+upgradeManager.GetUpgradeLevel(TowerType.Warrior).ToString();

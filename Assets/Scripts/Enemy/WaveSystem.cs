@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSystem : MonoBehaviour
 {
@@ -28,10 +29,15 @@ public class WaveSystem : MonoBehaviour
     }
     public void StartWave()
     {
+        if (currentWaveIndex == waves.Length-1)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
         if (currentWaveIndex < waves.Length - 1)
         {
             waveTimeleft = 80; //한 웨이브당 시간
             currentWaveIndex++;
+            
             float minRandomHPIncrease = initialMinRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
             float maxRandomHPIncrease = initialMaxRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
             enemySpawner.StartWave(waves[currentWaveIndex], minRandomHPIncrease, maxRandomHPIncrease);
