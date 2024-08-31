@@ -22,16 +22,22 @@ public class TowerWeapon : MonoBehaviour
     [SerializeField]
     private float splashDamage = 1f;        //스플래시 데미지
 
+
     private WeaponState weaponState = WeaponState.SearchTarget; // 무기의 상태
     private Transform attackTarget = null;   // 공격대상
     private EnemySpawner enemySpawner;
     private Tower tower;
     private Animator animator;
     private float EnhanceDamage;
+    private float baseAttackDamage;
+    private float baseSplashDamage;
 
     private void Awake()
     {
         tower = GetComponent<Tower>();
+        // 타워가 생성될 때 기본 데미지 값을 저장
+        baseAttackDamage = attackDamage;
+        baseSplashDamage = splashDamage;
     }
     public void Setup(EnemySpawner enemySpawner)
     {
@@ -159,8 +165,8 @@ public class TowerWeapon : MonoBehaviour
     public void ApplyUpgrades()
     {
         int level = TowerUpgradeManager.Instance.GetUpgradeLevel(tower.Data.Type);
-        float upgradeMultiplier = Mathf.Pow(1.1f, level - 1);
-        attackDamage *= upgradeMultiplier;
-        splashDamage *= upgradeMultiplier;
+        float increasePerLevel = 0.1f; // 레벨당 10% 증가
+        attackDamage = 10 * level + baseAttackDamage * (1f + increasePerLevel * (level - 1));//
+        splashDamage =10*level+baseSplashDamage * (1f + increasePerLevel * (level - 1));// 레벨당 10*x + 기본데미지 *(1.x)
     }
 }

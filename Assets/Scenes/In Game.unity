@@ -6996,7 +6996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a75b55e09a324d4591be9281f2bc5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 500
+  currentGold: 1000000
 --- !u!1001 &799444214
 PrefabInstance:
   m_ObjectHideFlags: 0
