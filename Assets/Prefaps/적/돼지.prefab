@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8f0355571c1f44d8f12bd3b0c6e1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 30
+  maxHP: 50
 --- !u!95 &-1560388977899582726
 Animator:
   serializedVersion: 5
