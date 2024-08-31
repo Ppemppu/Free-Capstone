@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bea505ab6e49a4989383fba745e72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 10
+  gold: 30
   spawnTime: 10
 --- !u!114 &3631172787988310784
 MonoBehaviour:

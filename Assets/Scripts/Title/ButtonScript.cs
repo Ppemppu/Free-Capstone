@@ -10,8 +10,12 @@ public class ButtonScript : MonoBehaviour
     {
         Btn_Image = GetComponent<Image>();
     }
-
-    public void OnButtonPress()
+    void Update()
+    {
+        if (Input.GetKey("escape"))
+            Application.Quit();
+    }
+        public void OnButtonPress()
     {
         Btn_Image.sprite = Pressed_Sprite; // 버튼이 눌렸을 때 스프라이트 변경
     }
@@ -20,5 +24,4 @@ public class ButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName); // 씬 전환
     }
-
 }
