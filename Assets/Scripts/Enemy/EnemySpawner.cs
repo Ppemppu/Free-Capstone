@@ -53,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
             enemyList.Add(enemy);
             playerHP.ChangeHP(1);
             spawnEnemyCount++;
-            yield return new WaitForSeconds(currentWave.spawnTime);
+            yield return new WaitForSeconds(0.4f);
         }
     }
     public void DestroyEnemy(Enemy enemy,int gold)

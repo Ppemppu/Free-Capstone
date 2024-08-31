@@ -4765,6 +4765,7 @@ GameObject:
   - component: {fileID: 518191752}
   - component: {fileID: 518191751}
   - component: {fileID: 518191750}
+  - component: {fileID: 518191753}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -4848,6 +4849,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 518191753}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &518191751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4886,6 +4899,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518191748}
   m_CullTransparentMesh: 1
+--- !u!82 &518191753
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518191748}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.315
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,7 +6772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6909037, y: 88}
+  m_AnchoredPosition: {x: 4.6909037, y: 64.585}
   m_SizeDelta: {x: 889.9233, y: 113.7937}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786270579
@@ -6713,8 +6822,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6859,7 +6968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameover_Panel: {fileID: 970776230}
-  maxHP: 50
+  maxHP: 70
 --- !u!4 &795353799
 Transform:
   m_ObjectHideFlags: 0
@@ -7361,6 +7470,7 @@ GameObject:
   - component: {fileID: 876708463}
   - component: {fileID: 876708462}
   - component: {fileID: 876708461}
+  - component: {fileID: 876708464}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -7444,6 +7554,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 876708464}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &876708462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7482,6 +7604,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876708459}
   m_CullTransparentMesh: 1
+--- !u!82 &876708464
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876708459}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.315
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &878794594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400879858183300828, guid: 5d19e545e2b4c3346b3207b0cac3b0d8, type: 3}
@@ -8069,8 +8287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: 12}
-  m_SizeDelta: {x: 936.1826, y: 316.8991}
+  m_AnchoredPosition: {x: 0, y: -0.0000047684}
+  m_SizeDelta: {x: 859.9064, y: 272.9825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970776232
 MonoBehaviour:
@@ -8429,8 +8647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -51}
-  m_SizeDelta: {x: 381.572, y: 117.3772}
+  m_AnchoredPosition: {x: 0.000015259, y: -49}
+  m_SizeDelta: {x: 316.8528, y: 86.1733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054705960
 MonoBehaviour:
@@ -9676,6 +9894,7 @@ GameObject:
   - component: {fileID: 1333750340}
   - component: {fileID: 1333750339}
   - component: {fileID: 1333750338}
+  - component: {fileID: 1333750341}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -9759,6 +9978,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1333750341}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1333750339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9797,6 +10028,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333750336}
   m_CullTransparentMesh: 1
+--- !u!82 &1333750341
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333750336}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.315
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1336559312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400879858183300828, guid: 5d19e545e2b4c3346b3207b0cac3b0d8, type: 3}
@@ -13490,190 +13817,160 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - spawnTime: 0.5
-    maxEnemyCount: 60
+  - maxEnemyCount: 60
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 60
+  - maxEnemyCount: 60
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 60
+  - maxEnemyCount: 60
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 60
+  - maxEnemyCount: 60
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 60
+  - maxEnemyCount: 60
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 70
+  - maxEnemyCount: 70
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 70
+  - maxEnemyCount: 70
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 70
+  - maxEnemyCount: 70
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 70
+  - maxEnemyCount: 70
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 70
+  - maxEnemyCount: 70
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 80
+  - maxEnemyCount: 80
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 80
+  - maxEnemyCount: 80
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 80
+  - maxEnemyCount: 80
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 80
+  - maxEnemyCount: 80
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 80
+  - maxEnemyCount: 80
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 90
+  - maxEnemyCount: 90
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 90
+  - maxEnemyCount: 90
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 90
+  - maxEnemyCount: 90
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 90
+  - maxEnemyCount: 90
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 90
+  - maxEnemyCount: 90
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: 78eeb0c45e6f4944fa2decfe08fb4210, type: 3}
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-  - spawnTime: 0.5
-    maxEnemyCount: 100
+  - maxEnemyCount: 100
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
@@ -13681,9 +13978,9 @@ MonoBehaviour:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
   enemySpawner: {fileID: 1700341483}
-  initialMinRandomHPIncrease: 0
-  initialMaxRandomHPIncrease: 100
-  randomHPIncreasePerWave: 100
+  initialMinRandomHPIncrease: 50
+  initialMaxRandomHPIncrease: 150
+  randomHPIncreasePerWave: 150
   playerHP: {fileID: 795353798}
 --- !u!4 &1700780065 stripped
 Transform:

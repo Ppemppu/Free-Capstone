@@ -8,7 +8,7 @@ public class PlayerHP : MonoBehaviour
     public GameObject gameover_Panel;
 
     [SerializeField]
-    private float maxHP =50;
+    private float maxHP;
     private float currentHP;
     private EnemySpawner enemySpawner;
 
@@ -38,7 +38,8 @@ public class PlayerHP : MonoBehaviour
     public void GameOver()
     {
         gameover_Panel.SetActive(true);
-        //SceneManager.LoadScene("GameOver");
+        Time.timeScale = 0f;
+
     }
 
 }

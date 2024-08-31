@@ -36,7 +36,7 @@ public class WaveSystem : MonoBehaviour
         }
         if (currentWaveIndex < waves.Length - 1)
         {
-            waveTimeleft = 80; //한 웨이브당 시간
+            waveTimeleft = 60; //한 웨이브당 시간
             currentWaveIndex++;
             
             float minRandomHPIncrease = initialMinRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
@@ -59,7 +59,6 @@ public class WaveSystem : MonoBehaviour
 [System.Serializable]
 public struct Wave
 {
-    public float spawnTime;
     public int maxEnemyCount;
     public GameObject[] enemyPrefabs;
 }
