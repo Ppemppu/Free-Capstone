@@ -24,7 +24,7 @@ public class TowerManager : MonoBehaviour
 {
     public TowerData[] AllTowers;
 
-    private Dictionary<TowerRank, float> rankProbabilities = new Dictionary<TowerRank, float> //타워 등급 확률
+    private Dictionary<TowerRank, float> weight = new Dictionary<TowerRank, float> //타워 등급 확률
     {
         { TowerRank.Normal, 0.4f },//40%
         { TowerRank.Rare, 0.3f },//30%
@@ -35,15 +35,15 @@ public class TowerManager : MonoBehaviour
     public TowerData GetRandomTowerPrefab() //타워 랜덤 설정
     {
         float randomValue = UnityEngine.Random.value;
-        float cumulativeProbability = 0.0f;
+        float total = 0.0f; 
 
-        foreach (var rank in rankProbabilities.Keys)
+        foreach (TowerRank rank in weight.Keys)
         {
-            cumulativeProbability += rankProbabilities[rank];
-            if (randomValue <= cumulativeProbability)
+            total += weight[rank];
+            if (randomValue <= total)
             {
                 var selectedTowers = new List<TowerData>();
-                foreach (var tower in AllTowers)
+                foreach (TowerData tower in AllTowers)
                 {
                     if (tower.Rank == rank)
                     {
@@ -53,7 +53,7 @@ public class TowerManager : MonoBehaviour
 
                 if (selectedTowers.Count > 0)
                 {
-                    return selectedTowers[UnityEngine.Random.Range(0, selectedTowers.Count)];
+                    return selectedTowers[UnityEngine.Random.Range(0, selectedTowers.Count)]; //선택된 등급의 타워중 궁수, 전사 ,법사 랜덤 선택
                 }
             }
         }
