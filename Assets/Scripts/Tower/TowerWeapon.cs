@@ -167,6 +167,6 @@ public class TowerWeapon : MonoBehaviour
         int level = TowerUpgradeManager.Instance.GetUpgradeLevel(tower.Data.Type);
         float increasePerLevel = 0.1f; // 레벨당 10% 증가
         attackDamage = 10 * level + baseAttackDamage * (1f + increasePerLevel * (level - 1));//
-        splashDamage =10*level+baseSplashDamage * (1f + increasePerLevel * (level - 1));// 레벨당 10*x + 기본데미지 *(1.x)
+        splashDamage =5*level+baseSplashDamage * (1f + increasePerLevel * (level - 1));// 레벨당 10*x + 기본데미지 *(1.05x)
     }
 }
