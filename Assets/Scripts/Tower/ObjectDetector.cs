@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ObjectDetector : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ObjectDetector : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 
+
+    private bool flag = true;
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -31,20 +34,27 @@ public class ObjectDetector : MonoBehaviour
 
     private void CheckMouseAction(bool isSpawn)
     {
-        ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (flag)
         {
-            if (hit.transform.CompareTag("Tile"))
+            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                if (isSpawn)
+                if (hit.transform.CompareTag("Tile"))
                 {
-                    towerSpawner.SpawnTower(hit.transform);
-                }
-                else
-                {
-                    towerSpawner.SellTower(hit.transform);
+                    if (isSpawn)
+                    {
+                        towerSpawner.SpawnTower(hit.transform);
+                    }
+                    else
+                    {
+                        towerSpawner.SellTower(hit.transform);
+                    }
                 }
             }
         }
+    }
+    public void setFlag(bool sflag)
+    {
+        flag = sflag;
     }
 }
