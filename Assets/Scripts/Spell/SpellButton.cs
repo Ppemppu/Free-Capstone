@@ -10,5 +10,6 @@ public class SpellButton : MonoBehaviour
     public void OnClick()
     {
         spellManager.CastSpell(spellIndex);
+        //spellManager.CastSpell();
     }
 }

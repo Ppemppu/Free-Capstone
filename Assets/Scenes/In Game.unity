@@ -6218,8 +6218,7 @@ GameObject:
   - component: {fileID: 706405901}
   - component: {fileID: 706405905}
   - component: {fileID: 706405902}
-  - component: {fileID: 706405904}
-  - component: {fileID: 706405903}
+  - component: {fileID: 706405907}
   - component: {fileID: 706405906}
   m_Layer: 0
   m_Name: ObjectClick
@@ -6256,40 +6255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 706405904}
-  - {fileID: 706405903}
+  - {fileID: 706405907}
   - {fileID: 706405906}
---- !u!114 &706405903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706405899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e29c96ca3cfee9b4fb83a91785060e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 5
-  rangeTexture: {fileID: 2800000, guid: c76135e4c7f23814ab9c960d7367c79a, type: 3}
-  damage: 50
---- !u!114 &706405904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706405899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0258aada462f6a4b8c2012e2afac40c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  rangeTexture: {fileID: 2800000, guid: c76135e4c7f23814ab9c960d7367c79a, type: 3}
-  slowAmount: 0.7
-  slowDuration: 10
 --- !u!114 &706405905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6315,11 +6282,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8752169394f01394c8cc40c10ad9dc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  rangeTexture: {fileID: 2800000, guid: c76135e4c7f23814ab9c960d7367c79a, type: 3}
+  radius: 0.5
+  rangeTexture: {fileID: 2800000, guid: 79c0f313bc3e39349859fbfbe8d6c7c9, type: 3}
   fieldPrefab: {fileID: 6578735421502921689, guid: c4603f05eadddb849b4cb15e5027099d, type: 3}
   damagePerTick: 5
   tickRate: 0.5
+  duration: 5.5
+--- !u!114 &706405907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706405899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0357bfb071adf1e4197a44fd5359bc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.5
+  rangeTexture: {fileID: 2800000, guid: fde6c265d759a574e8ecb37274c3452c, type: 3}
+  fieldPrefab: {fileID: 6578735421502921689, guid: d5fbf43cca1e9da4fbe58215a10104b4, type: 3}
+  slowAmount: 0.5
   duration: 5.5
 --- !u!4 &708984368 stripped
 Transform:
@@ -13603,7 +13587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellManager: {fileID: 706405902}
-  spellIndex: 2
+  spellIndex: 0
 --- !u!1001 &1653800957
 PrefabInstance:
   m_ObjectHideFlags: 0

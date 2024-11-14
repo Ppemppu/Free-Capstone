@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageFieldSpell : SpellBase
+public class SlowFieldSpell : SpellBase
 {
     public GameObject fieldPrefab;        // 장판 프리팹
-    public float damagePerTick = 10f;    // 틱당 데미지
-    public float tickRate = 0.5f;        // 데미지를 주는 주기
+    public float slowAmount = 0.5f;
     public float duration = 5f;          // 장판 지속시간
 
     protected override void CreateRangeIndicator()
@@ -25,12 +24,11 @@ public class DamageFieldSpell : SpellBase
         field.transform.localScale = new Vector3(radius * 2, radius * 2, 1);
 
         // 장판 컴포넌트 설정
-        DamageField damageField = field.GetComponent<DamageField>();
-        if (damageField != null)
+        SlowField slowField = field.GetComponent<SlowField>();
+        if (slowField != null)
         {
-            damageField.damagePerTick = this.damagePerTick;
-            damageField.tickRate = this.tickRate;
-            damageField.duration = this.duration;
+            slowField.slowAmount = this.slowAmount;
+            slowField.duration = this.duration;
         }
     }
 }
