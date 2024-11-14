@@ -6216,10 +6216,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706405901}
+  - component: {fileID: 706405905}
   - component: {fileID: 706405902}
   - component: {fileID: 706405904}
   - component: {fileID: 706405903}
-  - component: {fileID: 706405905}
+  - component: {fileID: 706405906}
   m_Layer: 0
   m_Name: ObjectClick
   m_TagString: Untagged
@@ -6256,6 +6257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - {fileID: 706405904}
+  - {fileID: 706405903}
+  - {fileID: 706405906}
 --- !u!114 &706405903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,6 +6303,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerSpawner: {fileID: 749842827}
+--- !u!114 &706405906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706405899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8752169394f01394c8cc40c10ad9dc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  rangeTexture: {fileID: 2800000, guid: c76135e4c7f23814ab9c960d7367c79a, type: 3}
+  fieldPrefab: {fileID: 6578735421502921689, guid: c4603f05eadddb849b4cb15e5027099d, type: 3}
+  damagePerTick: 5
+  tickRate: 0.5
+  duration: 5.5
 --- !u!4 &708984368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400879858183300828, guid: 5d19e545e2b4c3346b3207b0cac3b0d8, type: 3}
@@ -13582,7 +13603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellManager: {fileID: 706405902}
-  spellIndex: 0
+  spellIndex: 2
 --- !u!1001 &1653800957
 PrefabInstance:
   m_ObjectHideFlags: 0
