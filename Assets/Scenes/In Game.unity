@@ -6255,7 +6255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 706405907}
   - {fileID: 706405906}
 --- !u!114 &706405905
 MonoBehaviour:
