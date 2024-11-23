@@ -21,10 +21,14 @@ public class Enemy : MonoBehaviour
 
     public float spawnTime;
 
+    private Color originalColor; // 원래 색상 저장
+    private SpriteRenderer spriteRenderer; // SpriteRenderer 저장
 
     private void Start()
     {
-        spawnTime= Time.time; 
+        spawnTime= Time.time;
+        spriteRenderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 참조 저장
+        originalColor = spriteRenderer.color; 
     }
 
     private void Update()
@@ -113,6 +117,9 @@ public class Enemy : MonoBehaviour
         // 현재 속도에서 slowAmount(0~1)만큼 감소
         moveSpeed = originSpeed * (1 - slowAmount);
 
+        // 슬로우 색상 적용 (파란색으로 변경)
+        spriteRenderer.color = new Color(0f, 0f, 1f, 1f);
+
         // 현재 이동 방향 유지하면서 속도만 변경
         Vector3 currentDirection = (wayPoints[currentIndex].position - transform.position).normalized;
         movement2D.MoveTo(currentDirection, moveSpeed);
@@ -121,6 +128,9 @@ public class Enemy : MonoBehaviour
     {
         isSlowed = false;
         moveSpeed = originSpeed;
+
+        // 슬로우 색상 복원 (원래 색상으로 돌아감)
+        spriteRenderer.color = originalColor;
 
         // 현재 이동 방향 유지하면서 원래 속도로 복구
         Vector3 currentDirection = (wayPoints[currentIndex].position - transform.position).normalized;

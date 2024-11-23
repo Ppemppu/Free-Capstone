@@ -10,8 +10,8 @@ public class EnemyHP : MonoBehaviour
     private float currentHP; //현재 체력
     private bool isDie = false; //적이 사망하면 true
     private Enemy enemy;
-    private SpriteRenderer spriteRenderer;
-
+    public SpriteRenderer spriteRenderer;
+    
     private void Awake()
     {
         enemy = GetComponent<Enemy>();
@@ -23,7 +23,7 @@ public class EnemyHP : MonoBehaviour
         //적의 체력이 damage만큼 감소해서 죽을 상황 일 때 여러 타워의 공격을 동시에 받으면 enemy.onDie()함수가 여러번 실행될 수 있다.
         //현재 적의 상태가 사망 상태이면 아래 코드를 실행하지 않는다.
         if (isDie == true) return;
-      
+
         currentHP -= damage;
         Debug.Log($"Enemy took {damage} damage. Current HP: {currentHP}");
         StopCoroutine("HitAlphaAnimation");
@@ -61,7 +61,7 @@ public class EnemyHP : MonoBehaviour
         color.a = 0.4f;
         spriteRenderer.color = color;
         //0.05초 대기
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.1f);
         //적의 투명도를 100%로 설정
         color.a = 1.0f;
         spriteRenderer.color = color;
