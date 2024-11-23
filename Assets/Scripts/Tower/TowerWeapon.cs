@@ -31,6 +31,8 @@ public class TowerWeapon : MonoBehaviour
     private float EnhanceDamage;
     private float baseAttackDamage;
     private float baseSplashDamage;
+    private float artifactFixedDamageBonus = 0f;  // 고정 데미지 증가
+    private float artifactPercentDamageBonus = 0f; // 퍼센트 데미지 증가
 
     private void Awake()
     {
@@ -168,5 +170,10 @@ public class TowerWeapon : MonoBehaviour
         float increasePerLevel = 0.1f; // 레벨당 10% 증가
         attackDamage = 10 * level + baseAttackDamage * (1f + increasePerLevel * (level - 1));//
         splashDamage =5*level+baseSplashDamage * (1f + increasePerLevel * (level - 1));// 레벨당 10*x + 기본데미지 *(1.05x)
+
+        var (fixedBonus, percentBonus) = TowerUpgradeManager.Instance.GetArtifactEffects(tower.Data.Type);
+        attackDamage += fixedBonus;                  // 고정 증가 적용
+        attackDamage *= 1f + (percentBonus / 100f);  // 퍼센트 증가 적용
     }
+ 
 }

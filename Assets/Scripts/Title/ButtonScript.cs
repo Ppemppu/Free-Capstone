@@ -24,5 +24,6 @@ public class ButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName); // ¾À ÀüÈ¯
         Time.timeScale = 1f;
+
     }
 }

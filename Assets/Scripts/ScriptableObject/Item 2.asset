@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2003779991e6ce74bb5276dddbf3c705, type: 3}
+  m_Name: Item 2
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemId: 2
+  itemName: "\uC804\uC0AC \uAC15\uD654"
+  itemDesc: "\uC804\uC0AC \uD3EC\uD0D1\uC758 \uB370\uBBF8\uC9C0\uAC00 %\uC99D\uAC00"
+  itemIcon: {fileID: 21300000, guid: f16ee46d411f31f4d8574bb347f37164, type: 3}
+  Effective:
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  TowerType: 0

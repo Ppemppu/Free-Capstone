@@ -11,13 +11,13 @@ public class PlayerHP : MonoBehaviour
     private float maxHP;
     private float currentHP;
     private EnemySpawner enemySpawner;
+    public GameOver gameOverUI;
 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
 
     public void Awake()
     {
-        gameover_Panel.SetActive(false);
         currentHP =0; 
     }
 
@@ -37,9 +37,8 @@ public class PlayerHP : MonoBehaviour
     }
     public void GameOver()
     {
-        gameover_Panel.SetActive(true);
+        gameOverUI.Show();
         Time.timeScale = 0f;
-
     }
 
 }

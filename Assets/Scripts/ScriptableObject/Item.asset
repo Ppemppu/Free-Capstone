@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2003779991e6ce74bb5276dddbf3c705, type: 3}
+  m_Name: Item
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemId: 0
+  itemName: "\uC804\uCCB4 \uB370\uBBF8\uC9C0"
+  itemDesc: "\uD0C0\uC6CC\uC758 \uB370\uBBF8\uC9C0 %\uAC00 \uC99D\uAC00\uD55C\uB2E4"
+  itemIcon: {fileID: 21300000, guid: 743b2fa25b269204eb2171cb2e358551, type: 3}
+  Effective:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  TowerType: Archer
+  percent: 0
+  FixedDamageIncrease:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  PercentDamageIncrease: []
