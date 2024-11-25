@@ -90,19 +90,14 @@ public class WaveSystem : MonoBehaviour
             isChoosing = true; // 선택 상태로 전환
             defeatBoss(); // defeatBoss() 호출 - 선택창 열림
         }
-
-        // 플레이어 선택이 완료되면 StartWave 실행
         if (!isChoosing)
         {
             StartWave();
         }
     }
-
-    // 플레이어 선택 완료 함수
     public void CompleteChoice()
     {
         isChoosing = false; // 선택 상태 종료
-        Time.timeScale = 1; // 게임 시간 재개
         StartWave(); // 다음 웨이브 시작
     }
     public void defeatBoss()
