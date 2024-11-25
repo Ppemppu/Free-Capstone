@@ -14,14 +14,16 @@ public class DefeatBoss : MonoBehaviour
     }
     public void Show()
     {
+        Time.timeScale = 0;
         Next();
         rect.localScale = Vector3.one;
-        Time.timeScale = 0;
+        
     }
     public void Hide()
     {
         rect.localScale = Vector3.zero;
         Time.timeScale = 1;
+        WaveSystem.Instance.CompleteChoice();
     }
     void Next()
     {
@@ -36,7 +38,7 @@ public class DefeatBoss : MonoBehaviour
         {
             ran[0] = Random.Range(0, items.Length);
             ran[1] = Random.Range(0, items.Length);
-            ran[2] = Random.Range(0, items.Length);
+            ran[2] = 2;
             if (ran[0] != ran[1] && ran[1] != ran[2] && ran[0] != ran[2])
                 break;
         }

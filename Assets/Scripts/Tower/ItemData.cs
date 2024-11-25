@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Item", menuName ="Scriptable Object/ItemData")]
 public class ItemData : ScriptableObject
 {
-    public enum ItemType { Buffer, special }
+    public enum ItemType { Buffer, time }
     [Header("#Main Info")]
     public ItemType itemType;
     public int itemId;

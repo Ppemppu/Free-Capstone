@@ -3420,7 +3420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c923b6d1ceb7ac743be36efd5d28b2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 09f783f616205b34bbf3d914734d1e80, type: 2}
+  data: {fileID: 11400000, guid: 7e01be5f6dfa4044cac567c424b8ec2f, type: 2}
   level: 0
 --- !u!114 &352941131
 MonoBehaviour:
@@ -9466,7 +9466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c923b6d1ceb7ac743be36efd5d28b2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 09f783f616205b34bbf3d914734d1e80, type: 2}
+  data: {fileID: 11400000, guid: 7e01be5f6dfa4044cac567c424b8ec2f, type: 2}
   level: 0
 --- !u!114 &1004977261
 MonoBehaviour:
@@ -16019,7 +16019,7 @@ MonoBehaviour:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
-    isBossWaves: 1
+    isBossWaves: 0
   - maxEnemyCount: 10
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}

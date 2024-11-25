@@ -43,8 +43,8 @@ public class Item : MonoBehaviour
                 TowerUpgradeManager.Instance.UpdateArtifactEffects(towerType, fixedBonus, percentBonus);
                 TowerUpgradeManager.Instance.UpdateAllTowers();
                 break;
-            case ItemData.ItemType.special:
-
+            case ItemData.ItemType.time:
+                WaveSystem.Instance.increaseWaveTime(10);
                 break;
         }
         level++;
