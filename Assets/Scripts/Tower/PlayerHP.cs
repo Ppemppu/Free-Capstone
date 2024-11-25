@@ -25,20 +25,18 @@ public class PlayerHP : MonoBehaviour
     {
         currentHP += amount;
         currentHP = Mathf.Clamp(currentHP, 0, maxHP); // HP가 0에서 maxHP 사이에 있도록 제한
-
-        if (currentHP >= maxHP)
-        {
-            GameOver();
-        }
     }
     public float GetHP()
     {
         return currentHP;
     }
+    public void resetHP()
+    {
+        currentHP = 0;
+    }
     public void GameOver()
     {
         gameOverUI.Show();
-        Time.timeScale = 0f;
     }
 
 }

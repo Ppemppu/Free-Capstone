@@ -19,9 +19,17 @@ MonoBehaviour:
     \uC99D\uAC00"
   itemIcon: {fileID: 21300000, guid: c76135e4c7f23814ab9c960d7367c79a, type: 3}
   Effective:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  TowerType: 2
+  percent: 0
+  FixedDamageIncrease:
   - 10
   - 10
   - 10
   - 10
   - 20
-  TowerType: 2
+  PercentDamageIncrease: []

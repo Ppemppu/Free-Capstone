@@ -18,6 +18,7 @@ public class WaveSystem : MonoBehaviour
     private int currentWaveIndex = -1;
     private float waveTimeleft;
     public PlayerHP playerHP;
+    public DefeatBoss uiDefeatBoss;
 
     public int CurrentWave => currentWaveIndex + 1;
     public int LeftTime => Mathf.FloorToInt(waveTimeleft);
@@ -29,36 +30,53 @@ public class WaveSystem : MonoBehaviour
     }
     public void StartWave()
     {
-        if (currentWaveIndex == waves.Length-1)
-        {
-            playerHP.GameOver();
-            //SceneManager.LoadScene("GameOver");
-        }
         if (currentWaveIndex < waves.Length - 1)
         {
-            waveTimeleft = 60; //한 웨이브당 시간
+            playerHP.resetHP();
+            waveTimeleft = 120; //한 웨이브당 시간
             currentWaveIndex++;
-            
             float minRandomHPIncrease = initialMinRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
             float maxRandomHPIncrease = initialMaxRandomHPIncrease + (randomHPIncreasePerWave * currentWaveIndex);
             enemySpawner.StartWave(waves[currentWaveIndex], minRandomHPIncrease, maxRandomHPIncrease);
-            Debug.Log($"Wave {CurrentWave} started. Random HP increase range: {minRandomHPIncrease} - {maxRandomHPIncrease}");
         }
     }
     public void Update()
     {
         waveTimeleft -= Time.deltaTime;
-        if (waveTimeleft <= 0)
+        if (waveTimeleft < 1)
+        {
+            if (playerHP.CurrentHP != waves[currentWaveIndex].maxEnemyCount)
+                playerHP.GameOver();
+            else
+            {
+                if (waves[currentWaveIndex].isBossWaves)
+                    defeatBoss();
+                StartWave();
+            }
+        }
+        if (playerHP.CurrentHP == waves[currentWaveIndex].maxEnemyCount)
+        {
+            if (waves[currentWaveIndex].isBossWaves)
+                defeatBoss();
+
             StartWave();
-        if (playerHP.CurrentHP == 0)
-            StartWave();
-        
+        }
+    }
+    public void defeatBoss()
+    {
+        uiDefeatBoss.Show();
+    }
+    public int returnMaxEnemy()
+    {
+        return waves[currentWaveIndex].maxEnemyCount;
     }
 }
+
 
 [System.Serializable]
 public struct Wave
 {
     public int maxEnemyCount;
     public GameObject[] enemyPrefabs;
+    public bool isBossWaves;
 }

@@ -51,14 +51,13 @@ public class EnemySpawner : MonoBehaviour
 
             enemy.Setup(this, wayPoints);
             enemyList.Add(enemy);
-            playerHP.ChangeHP(1);
             spawnEnemyCount++;
             yield return new WaitForSeconds(0.4f);
         }
     }
     public void DestroyEnemy(Enemy enemy,int gold)
     {
-        playerHP.ChangeHP(-1); // 적 제거 시 라이프 값 감소
+        playerHP.ChangeHP(1); // 적 제거 시 라이프 값 감소
         playerGold.CurrentGold += gold;
         enemyList.Remove(enemy);
         Destroy(enemy.gameObject);
