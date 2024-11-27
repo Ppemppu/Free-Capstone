@@ -132,6 +132,7 @@ public class Enemy : MonoBehaviour
         isSlowed = false;
         moveSpeed = originSpeed;
 
+        // 슬로우 풀리면 원래 색상으로 변경
         spriteRenderer.color = originalColor;
 
         // 현재 이동 방향 유지하면서 원래 속도로 복구

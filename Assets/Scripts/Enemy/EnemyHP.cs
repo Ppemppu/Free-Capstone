@@ -11,11 +11,13 @@ public class EnemyHP : MonoBehaviour
     private bool isDie = false; //적이 사망하면 true
     private Enemy enemy;
     public SpriteRenderer spriteRenderer;
+    private Color originalColor;
     
     private void Awake()
     {
         enemy = GetComponent<Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     public void TakeDamage(float damage)
@@ -54,16 +56,32 @@ public class EnemyHP : MonoBehaviour
 
     private IEnumerator HitAlphaAnimation()
     {
-        //현재 색상을 color변수에 저장
-        Color color = spriteRenderer.color;
-
         //적의 투명도를 40%로 설정
-        color.a = 0.4f;
-        spriteRenderer.color = color;
+        originalColor.a = 0.4f;
+        if (spriteRenderer.color != Color.blue)
+        {
+            spriteRenderer.color = originalColor;
+        }
         //0.05초 대기
         yield return new WaitForSeconds(0.1f);
         //적의 투명도를 100%로 설정
-        color.a = 1.0f;
-        spriteRenderer.color = color;
+        originalColor.a = 1.0f;
+        if(spriteRenderer.color != Color.blue)
+        {
+            spriteRenderer.color = originalColor;
+        }
+
+        // 기존 코드
+        ////현재 색상을 color변수에 저장
+        //Color color = spriteRenderer.color;
+
+        ////적의 투명도를 40%로 설정
+        //color.a = 0.4f;
+        //spriteRenderer.color = color;
+        ////0.05초 대기
+        //yield return new WaitForSeconds(0.1f);
+        ////적의 투명도를 100%로 설정
+        //color.a = 1.0f;
+        //spriteRenderer.color = color;
     }
 }

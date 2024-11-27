@@ -15,21 +15,21 @@ public class SpellManager : MonoBehaviour
         }
     }
 
-    public void CastSpell(int spellIndex)
-    {
-        if (spellIndex < spells.Count)
-        {
-            spells[spellIndex].StartTargeting();
-        }
-    }
-    //public void CastSpell()
+    //public void CastSpell(int spellIndex)
     //{
-    //    if (spells.Count > 0)
+    //    if (spellIndex < spells.Count)
     //    {
-    //        int Randint = Random.Range(0, spells.Count);
-    //        spells[Randint].StartTargeting();
+    //        spells[spellIndex].StartTargeting();
     //    }
     //}
+    public void CastSpell()
+    {
+        if (spells.Count > 0)
+        {
+            int Randint = Random.Range(0, spells.Count);
+            spells[Randint].StartTargeting();
+        }
+    }
 
     // 런타임에서 스펠 추가
     public void AddSpell(SpellBase spell)

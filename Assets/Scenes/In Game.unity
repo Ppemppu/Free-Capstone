@@ -7063,6 +7063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - {fileID: 706405906}
+  - {fileID: 706405907}
 --- !u!114 &706405905
 MonoBehaviour:
   m_ObjectHideFlags: 0

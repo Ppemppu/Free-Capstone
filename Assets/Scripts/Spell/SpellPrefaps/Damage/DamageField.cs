@@ -40,8 +40,8 @@ public class DamageField : MonoBehaviour
                 EnemyHP enemy = collider.GetComponent<EnemyHP>();
                 if (enemy != null)
                 {
-                    enemy.spriteRenderer.color = new Color(1f, 0f, 0f, 1f);
                     enemy.TakeDamage(damagePerTick);
+                    enemy.spriteRenderer.color = new Color(1f, 0f, 0f, 1f);
                 }
             }
         }
