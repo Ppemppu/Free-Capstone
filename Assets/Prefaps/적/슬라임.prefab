@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 15
   spawnTime: 10
+  dc: {fileID: 9100000, guid: 06a0b37e28d120840894b932b64d8de4, type: 2}
+  deathPrefab: {fileID: 5016030623791194196, guid: 31c3ce26740284c47b0d2f623893ad90, type: 3}
 --- !u!114 &3631172787988310784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 30
+  spriteRenderer: {fileID: 0}
 --- !u!95 &-1560388977899582726
 Animator:
   serializedVersion: 5

@@ -6,7 +6,7 @@ public class DamageField : MonoBehaviour
 {
     public float damagePerTick ;  // 틱당 데미지
     public float tickRate ;      // 틱 간격 (초)
-    public float duration = 3f ;        // 장판 지속시간
+    public float duration;        // 장판 지속시간
     private float tickTimer = 0f;
     private float durationTimer = 0f;
 
@@ -40,8 +40,8 @@ public class DamageField : MonoBehaviour
                 EnemyHP enemy = collider.GetComponent<EnemyHP>();
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(damagePerTick);
                     enemy.spriteRenderer.color = new Color(1f, 0f, 0f, 1f);
+                    enemy.TakeDamage(damagePerTick);
                 }
             }
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 //using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Enemy : MonoBehaviour
@@ -24,9 +25,11 @@ public class Enemy : MonoBehaviour
     private Color originalColor; // 원래 색상 저장
     private SpriteRenderer spriteRenderer; // SpriteRenderer 저장
 
+    public GameObject deathPrefab;
+
     private void Start()
     {
-        spawnTime= Time.time;
+        spawnTime = Time.time;
         spriteRenderer = GetComponent<SpriteRenderer>(); // SpriteRenderer 참조 저장
         originalColor = spriteRenderer.color; 
     }
@@ -129,7 +132,6 @@ public class Enemy : MonoBehaviour
         isSlowed = false;
         moveSpeed = originSpeed;
 
-        // 슬로우 색상 복원 (원래 색상으로 돌아감)
         spriteRenderer.color = originalColor;
 
         // 현재 이동 방향 유지하면서 원래 속도로 복구
@@ -139,7 +141,13 @@ public class Enemy : MonoBehaviour
 
     public void OnDie()
     {
+        movement2D.moveSpeed = 0.0f;
+        Instantiate(deathPrefab, transform.position, Quaternion.identity); // 사망 이펙트 프리펩 생성
+        enemySpawner.DestroyEnemy(this, gold);
+    }
 
-        enemySpawner.DestroyEnemy(this,gold);
+    public void deathPrefebDestroy()
+    {
+        Destroy(gameObject);
     }
 }
