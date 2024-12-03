@@ -28,6 +28,7 @@ public class TowerWeapon : MonoBehaviour
     private EnemySpawner enemySpawner;
     private Tower tower;
     private Animator animator;
+    public AudioClip attackSound;
     private float EnhanceDamage;
     private float baseAttackDamage;
     private float baseSplashDamage;
@@ -175,5 +176,12 @@ public class TowerWeapon : MonoBehaviour
         attackDamage += fixedBonus;                  // 고정 증가 적용
         attackDamage *= 1f + (percentBonus / 100f);  // 퍼센트 증가 적용
     }
- 
+    public void PlayAttackSound()
+    {
+        if (attackSound != null)
+        {
+            SoundManager.Instance.PlaySound(attackSound, 0.1f);
+        }
+    }
+
 }

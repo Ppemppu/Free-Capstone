@@ -107,6 +107,7 @@ MonoBehaviour:
   attackDamage: 30
   splashattack: 1
   splashDamage: 15
+  attackSound: {fileID: 8300000, guid: 04e1e280c6913d7458c06669b73a9d2e, type: 3}
 --- !u!95 &-4912352472194385642
 Animator:
   serializedVersion: 5
