@@ -34,6 +34,9 @@ public class TowerWeapon : MonoBehaviour
     private float baseSplashDamage;
     private float artifactFixedDamageBonus = 0f;  // 고정 데미지 증가
     private float artifactPercentDamageBonus = 0f; // 퍼센트 데미지 증가
+    private bool isEnforced = false;
+    private float EnforceTimer;
+    private float BeforeEnfoce;
 
     private void Awake()
     {
@@ -74,6 +77,16 @@ public class TowerWeapon : MonoBehaviour
         if (attackTarget != null)
         {
             RotateToTarget();
+        }
+        if (isEnforced)
+        {
+            EnforceTimer -= Time.deltaTime;
+
+            // 슬로우 시간이 끝나면 원래 속도로 복구
+            if (EnforceTimer <= 0)
+            {
+                RemoveEnforce();
+            }
         }
     }
 
@@ -181,5 +194,16 @@ public class TowerWeapon : MonoBehaviour
             SoundManager.Instance.PlaySound(attackSound, 0.1f);
         }
     }
-
+    public void EnforceSpell(float duration)
+    {
+        isEnforced = true;
+        EnforceTimer = duration;
+        BeforeEnfoce = attackDamage;
+        attackDamage *= 1.5f;
+    }
+    public void RemoveEnforce()
+    {
+        isEnforced = false;
+        attackDamage = BeforeEnfoce;
+    }
 }

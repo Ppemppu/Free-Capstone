@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageFieldSpell : SpellBase
+public class EnforceFieldSpell : SpellBase
 {
     public GameObject fieldPrefab;        // 장판 프리팹
     public float damagePerTick = 10f;    // 틱당 데미지
@@ -22,16 +22,28 @@ public class DamageFieldSpell : SpellBase
         GameObject field = Instantiate(fieldPrefab, position, Quaternion.identity);
 
         // 장판 크기 설정
-
-        field.transform.localScale = new Vector3(radius * 2, radius * 2, 1);
-
-        // 장판 컴포넌트 설정
-        DamageField damageField = field.GetComponent<DamageField>();
-        if (damageField != null)
+        field.transform.localScale = new Vector3(radius * 4, radius * 4, 1);
+        EnforceField enforceField = field.GetComponent<EnforceField>();
+        if (field != null)
         {
-            damageField.damagePerTick = this.damagePerTick;
-            damageField.tickRate = this.tickRate;
-            damageField.duration = this.duration;
+            enforceField.duration = this.duration;
         }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, radius);
+
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Tower"))
+            {
+                TowerWeapon towerWeapon = collider.GetComponent<TowerWeapon>();
+                if (towerWeapon != null)
+                {
+                    towerWeapon.EnforceSpell(duration);
+                }
+            }
+        }
+
+
     }
 }

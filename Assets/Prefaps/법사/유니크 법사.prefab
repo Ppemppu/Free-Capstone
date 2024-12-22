@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8569174913663964860}
   - component: {fileID: -4912352472194385642}
   - component: {fileID: 4003087927167588929}
+  - component: {fileID: -8329287657368829817}
   m_Layer: 0
   m_Name: "\uC720\uB2C8\uD06C \uBC95\uC0AC"
   m_TagString: Tower
@@ -145,6 +146,41 @@ MonoBehaviour:
     Type: 1
     Rank: 3
     Prefab: {fileID: 377164387751537577}
+--- !u!58 &-8329287657368829817
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377164387751537577}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &3548878333923652370
 GameObject:
   m_ObjectHideFlags: 0

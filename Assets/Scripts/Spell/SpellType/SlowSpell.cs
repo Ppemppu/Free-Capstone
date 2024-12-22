@@ -9,6 +9,7 @@ public class SlowSpell : SpellBase
 
     protected override void CastSpell(Vector3 position)
     {
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, radius);
 
         foreach (Collider2D collider in colliders)
@@ -22,5 +23,6 @@ public class SlowSpell : SpellBase
                 }
             }
         }
+
     }
 }

@@ -7140,6 +7140,7 @@ GameObject:
   - component: {fileID: 706405902}
   - component: {fileID: 706405907}
   - component: {fileID: 706405906}
+  - component: {fileID: 706405908}
   m_Layer: 0
   m_Name: ObjectClick
   m_TagString: Untagged
@@ -7177,6 +7178,7 @@ MonoBehaviour:
   spells:
   - {fileID: 706405906}
   - {fileID: 706405907}
+  - {fileID: 706405908}
   playerGold: {fileID: 795353800}
 --- !u!114 &706405905
 MonoBehaviour:
@@ -7226,6 +7228,24 @@ MonoBehaviour:
   fieldPrefab: {fileID: 6578735421502921689, guid: d5fbf43cca1e9da4fbe58215a10104b4, type: 3}
   slowAmount: 0.5
   duration: 5.5
+--- !u!114 &706405908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706405899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eac22ef8b88a19458bf538281aad069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  rangeTexture: {fileID: 2800000, guid: 0cf3983d32d454f4fbd6bf6937c06a26, type: 3}
+  fieldPrefab: {fileID: 6578735421502921689, guid: c3e33aea2121d2c418aa37dc35b6ac51, type: 3}
+  damagePerTick: 0
+  tickRate: 0
+  duration: 5
 --- !u!4 &708984368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400879858183300828, guid: 5d19e545e2b4c3346b3207b0cac3b0d8, type: 3}
@@ -7948,7 +7968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a75b55e09a324d4591be9281f2bc5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 500
+  currentGold: 10000
 --- !u!1001 &799444214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16235,85 +16255,85 @@ MonoBehaviour:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 60
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 0
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 0
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 70
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: 9252443464421574a8904c1a3219605c, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 80
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 80
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 80
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 80
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
     - {fileID: 5016030623791194196, guid: b3f8afe675ce09f4f8ccb51e8f924967, type: 3}
     isBossWaves: 1
-  - maxEnemyCount: 80
+  - maxEnemyCount: 1
     enemyPrefabs:
     - {fileID: 5016030623791194196, guid: eedf3e4a4e7eefe4fb1ef1c432f56bb4, type: 3}
     - {fileID: 5016030623791194196, guid: 3a2602e3b866897459def74ba08d39cd, type: 3}
