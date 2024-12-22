@@ -33,8 +33,6 @@ public class TowerSpawner : MonoBehaviour
             tile.IsBuildTower = true;
             playerGold.CurrentGold -= towerBuildGold;
 
-          
-
             // 선택한 타일의 위치에 타워 건설
             GameObject clone = Instantiate(towerPrefab.Prefab, tileTransform.position, Quaternion.identity);
             clone.transform.SetParent(tileTransform); // 타워를 타일의 자식으로 설정

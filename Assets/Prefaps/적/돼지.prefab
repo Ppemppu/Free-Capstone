@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8415803539855868599}
-  - component: {fileID: 303251492187045205}
+  - component: {fileID: -705737758449213243}
   - component: {fileID: 1879630610632181109}
+  - component: {fileID: 303251492187045205}
   - component: {fileID: 3631172787988310784}
   - component: {fileID: -7338010167190998770}
-  - component: {fileID: -705737758449213243}
   - component: {fileID: -1560388977899582726}
   m_Layer: 0
   m_Name: "\uB3FC\uC9C0"
@@ -37,6 +37,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-705737758449213243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016030623791194196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8f0355571c1f44d8f12bd3b0c6e1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 50
+  spriteRenderer: {fileID: 0}
+--- !u!114 &1879630610632181109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016030623791194196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bea505ab6e49a4989383fba745e72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 20
+  spawnTime: 10
+  deathPrefab: {fileID: 5016030623791194196, guid: 31c3ce26740284c47b0d2f623893ad90, type: 3}
 --- !u!212 &303251492187045205
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,22 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1879630610632181109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5016030623791194196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3bea505ab6e49a4989383fba745e72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gold: 20
-  spawnTime: 10
-  dc: {fileID: 9100000, guid: 06a0b37e28d120840894b932b64d8de4, type: 2}
-  deathPrefab: {fileID: 5016030623791194196, guid: 31c3ce26740284c47b0d2f623893ad90, type: 3}
 --- !u!114 &3631172787988310784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,20 +167,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &-705737758449213243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5016030623791194196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c8f0355571c1f44d8f12bd3b0c6e1f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 50
-  spriteRenderer: {fileID: 0}
 --- !u!95 &-1560388977899582726
 Animator:
   serializedVersion: 5

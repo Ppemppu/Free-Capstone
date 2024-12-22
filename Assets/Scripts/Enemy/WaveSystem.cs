@@ -57,11 +57,11 @@ public class WaveSystem : MonoBehaviour
 
         }
     }
+
     public void Update()
     {
         // 웨이브 시간 감소
         waveTimeleft -= Time.deltaTime;
-
         // 웨이브 시간 초과
         if (waveTimeleft < 1)
         {
@@ -71,19 +71,17 @@ public class WaveSystem : MonoBehaviour
             }
             else
             {
-                HandleBossWave();
+                DefeatWave();
             }
         }
-
-        // 적 HP가 최대치에 도달
         if (playerHP.CurrentHP == waves[currentWaveIndex].maxEnemyCount)
         {
-            HandleBossWave();
+            DefeatWave();
         }
     }
 
-    // 보스 웨이브 처리
-    private void HandleBossWave()
+
+    private void DefeatWave()
     {
         if (waves[currentWaveIndex].isBossWaves && !isChoosing)
         {

@@ -39,9 +39,9 @@ public class EnemySpawner : MonoBehaviour
         while (spawnEnemyCount < currentWave.maxEnemyCount)
         {
             int enemyIndex = Random.Range(0, currentWave.enemyPrefabs.Length);
-            GameObject clone = Instantiate(currentWave.enemyPrefabs[enemyIndex]);
+            GameObject clone = Instantiate(currentWave.enemyPrefabs[enemyIndex]);//적 생성
             Enemy enemy = clone.GetComponent<Enemy>();
-            EnemyHP enemyHP = clone.GetComponent<EnemyHP>();
+            EnemyHP enemyHP = clone.GetComponent<EnemyHP>();//컴포넌트 받아오기
 
             // 랜덤 체력 증가 적용
             float baseHP = enemyHP.GetMaxHP();
@@ -49,12 +49,13 @@ public class EnemySpawner : MonoBehaviour
             int totalHP = Mathf.RoundToInt(baseHP + randomHPIncrease);
             enemyHP.SetMaxHP(totalHP);
 
-            enemy.Setup(this, wayPoints);
+            enemy.Setup(this, wayPoints);//이동 경로 설정
             enemyList.Add(enemy);
             spawnEnemyCount++;
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.4f); //0.4초 기다린 후 SpawnEnemy()
         }
     }
+
     public void DestroyEnemy(Enemy enemy,int gold)
     {
         playerHP.ChangeHP(1); // 적 제거 시 라이프 값 감소

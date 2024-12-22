@@ -19,16 +19,5 @@ public class Tower : MonoBehaviour
     {
         weapon = GetComponent<TowerWeapon>();
     }
-    public void Initialize(TowerData data)
-    {
-        Data = data;
-        Upgrade(); // 초기 생성 시 현재 업그레이드 레벨 적용
-    }
-    public void Upgrade()
-    {
-        if (weapon != null)
-        {
-            weapon.ApplyUpgrades();
-        }
-    }
+  
 }

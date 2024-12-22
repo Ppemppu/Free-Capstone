@@ -23,7 +23,7 @@ public abstract class SpellBase : MonoBehaviour
         rangeIndicator.SetActive(false);
     }
 
-    protected virtual void CreateRangeIndicator() //스펠 범위ㄴ
+    protected virtual void CreateRangeIndicator() //스펠 범위 미리보기
     {
         rangeIndicator = new GameObject("RangeIndicator");
         SpriteRenderer spriteRenderer = rangeIndicator.AddComponent<SpriteRenderer>();
@@ -80,11 +80,6 @@ public abstract class SpellBase : MonoBehaviour
                 CastSpell(mousePosition);
                 EndTargeting();
                 StartCoroutine(DelaySetFlag());
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                EndTargeting();
             }
         }
     }

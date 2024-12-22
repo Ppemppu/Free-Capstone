@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class ObjectDetector : MonoBehaviour
 {
+    public static ObjectDetector Instance;
     [SerializeField]
     private TowerSpawner towerSpawner;
     private Camera mainCamera;
@@ -13,9 +14,18 @@ public class ObjectDetector : MonoBehaviour
 
 
     private bool flag = true;
-    private void Awake()
+    public void Awake()
     {
         mainCamera = Camera.main;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()

@@ -6,7 +6,7 @@ public class SpellManager : MonoBehaviour
 {   
     [SerializeField] private List<SpellBase> spells = new List<SpellBase>();
     [SerializeField] public PlayerGold playerGold;
-    private int spellCost=500;
+    private int spellCost=200;
 
     private void Start()
     {
@@ -21,10 +21,10 @@ public class SpellManager : MonoBehaviour
     {
         if (spells.Count > 0)
         {
-            int Randint = Random.Range(0, spells.Count);
+            int Randint = Random.Range(0, spells.Count); //리스트 안의 랜덤한 
             spells[Randint].StartTargeting();
             playerGold.CurrentGold -= spellCost;
-            spellCost += 500;
+            spellCost += 50;
         }
     }
 

@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class DefeatBoss : MonoBehaviour
 {
-    private ObjectDetector detector;
     RectTransform rect;
     Item[] items;
     private void Awake()
     {
-        detector = GetComponent<ObjectDetector>();
         rect = GetComponent<RectTransform>();
         items= GetComponentsInChildren<Item>(true);
     }
     public void Show()
     {
+        ObjectDetector.Instance.setFlag(false);
         Time.timeScale = 0;
         Next();
         rect.localScale = Vector3.one;
@@ -25,6 +24,7 @@ public class DefeatBoss : MonoBehaviour
         rect.localScale = Vector3.zero;
         Time.timeScale = 1;
         WaveSystem.Instance.CompleteChoice();
+        ObjectDetector.Instance.setFlag(true);
     }
     void Next()
     {

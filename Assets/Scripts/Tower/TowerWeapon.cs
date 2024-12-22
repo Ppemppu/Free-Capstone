@@ -135,7 +135,7 @@ public class TowerWeapon : MonoBehaviour
                 ChangeState(WeaponState.SearchTarget);
                 yield break;
             }
-            // 타겟이 공격 범위 안에 있는지 검사
+            // 공격중 적이 사정거리 밖으로 나가면 다시 찾기
             float distance = Vector3.Distance(attackTarget.position, transform.position);
             if (distance > attackRange)
             {
@@ -143,10 +143,7 @@ public class TowerWeapon : MonoBehaviour
                 ChangeState(WeaponState.SearchTarget);
                 yield break;
             }
-
             animator.SetTrigger("attack");
-            //SpawnProjectile(); // 공격(발사체 생성) , 이거 애니메이션에 Event로 호출할거라서 주석처리함
-
             // 공격 속도 시간 만큼 대기
             yield return new WaitForSeconds(attackRate);
         }
