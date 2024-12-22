@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class DefeatBoss : MonoBehaviour
 {
+    private ObjectDetector detector;
     RectTransform rect;
     Item[] items;
     private void Awake()
     {
+        detector = GetComponent<ObjectDetector>();
         rect = GetComponent<RectTransform>();
         items= GetComponentsInChildren<Item>(true);
     }
@@ -17,7 +19,6 @@ public class DefeatBoss : MonoBehaviour
         Time.timeScale = 0;
         Next();
         rect.localScale = Vector3.one;
-        
     }
     public void Hide()
     {

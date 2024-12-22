@@ -16,7 +16,7 @@ MonoBehaviour:
   itemId: 2
   itemName: "\uC2DC\uAC04 \uC99D\uAC00"
   itemDesc: "\uC6E8\uC774\uBE0C\uC758 \uC81C\uD55C \uC2DC\uAC04\uC774 \uC99D\uAC00"
-  itemIcon: {fileID: 21300000, guid: bf4f81e55c6e4c14eab7124dc79b477c, type: 3}
+  itemIcon: {fileID: 21300000, guid: 471bbe07349beb745b7d393a3a2ab263, type: 3}
   Effective:
   - 10
   - 15
