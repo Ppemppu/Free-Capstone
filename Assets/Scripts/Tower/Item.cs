@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.PlasticSCM.Editor.WebApi.CredentialsResponse;
 
 public class Item : MonoBehaviour
 {
@@ -36,15 +37,30 @@ public class Item : MonoBehaviour
         switch (data.itemType)
         {
             case ItemData.ItemType.Buffer:
-                float fixedBonus = data.FixedDamageIncrease.Length > level ? data.FixedDamageIncrease[level] : 0f;
+                float fixedBonus = data.FixedDamageIncrease.Length > level ? data.FixedDamageIncrease[level] : 0f;  //오류 방지 삼항연산자
                 float percentBonus = data.PercentDamageIncrease.Length > level ? data.PercentDamageIncrease[level] : 0f;
 
-                TowerType towerType = (TowerType)Enum.Parse(typeof(TowerType), data.TowerType);
-                TowerUpgradeManager.Instance.UpdateArtifactEffects(towerType, fixedBonus, percentBonus);
-                TowerUpgradeManager.Instance.UpdateAllTowers();
+                if (data.TowerType == "All")
+                {
+                    TowerUpgradeManager.Instance.UpdateArtifactEffects(TowerType.Warrior, fixedBonus, percentBonus);
+                    TowerUpgradeManager.Instance.UpdateAllTowers();
+                    TowerUpgradeManager.Instance.UpdateArtifactEffects(TowerType.Archer, fixedBonus, percentBonus);
+                    TowerUpgradeManager.Instance.UpdateAllTowers();
+                    TowerUpgradeManager.Instance.UpdateArtifactEffects(TowerType.Mage, fixedBonus, percentBonus);
+                    TowerUpgradeManager.Instance.UpdateAllTowers();
+                }
+                else
+                {
+                    TowerType towerType = (TowerType)Enum.Parse(typeof(TowerType), data.TowerType);
+                    TowerUpgradeManager.Instance.UpdateArtifactEffects(towerType, fixedBonus, percentBonus);
+                    TowerUpgradeManager.Instance.UpdateAllTowers();
+                }
+
+                
                 break;
             case ItemData.ItemType.time:
-                WaveSystem.Instance.increaseWaveTime(10);
+                float increaseTime = data.Effective.Length > level ? data.Effective[level] : 0f;
+                WaveSystem.Instance.increaseWaveTime(increaseTime);
                 break;
         }
         level++;

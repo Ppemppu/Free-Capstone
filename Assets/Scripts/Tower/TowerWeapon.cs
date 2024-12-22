@@ -175,6 +175,7 @@ public class TowerWeapon : MonoBehaviour
         var (fixedBonus, percentBonus) = TowerUpgradeManager.Instance.GetArtifactEffects(tower.Data.Type);
         attackDamage += fixedBonus;                  // 고정 증가 적용
         attackDamage *= 1f + (percentBonus / 100f);  // 퍼센트 증가 적용
+        splashDamage *= 1f + (percentBonus / 100f);
     }
     public void PlayAttackSound()
     {

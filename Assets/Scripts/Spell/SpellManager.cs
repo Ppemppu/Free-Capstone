@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpellManager : MonoBehaviour
 {   
     [SerializeField] private List<SpellBase> spells = new List<SpellBase>();
+    [SerializeField] public PlayerGold playerGold;
+    private int spellCost=500;
 
     private void Start()
     {
@@ -15,34 +17,17 @@ public class SpellManager : MonoBehaviour
         }
     }
 
-    //public void CastSpell(int spellIndex)
-    //{
-    //    if (spellIndex < spells.Count)
-    //    {
-    //        spells[spellIndex].StartTargeting();
-    //    }
-    //}
     public void CastSpell()
     {
         if (spells.Count > 0)
         {
             int Randint = Random.Range(0, spells.Count);
             spells[Randint].StartTargeting();
+            playerGold.CurrentGold -= spellCost;
+            spellCost += 500;
         }
     }
 
-    // 런타임에서 스펠 추가
-    public void AddSpell(SpellBase spell)
-    {
-        if (!spells.Contains(spell))
-        {
-            spells.Add(spell);
-        }
-    }
+ 
 
-    // 런타임에서 스펠 제거
-    public void RemoveSpell(SpellBase spell)
-    {
-        spells.Remove(spell);
-    }
 }

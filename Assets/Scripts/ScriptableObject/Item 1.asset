@@ -32,4 +32,9 @@ MonoBehaviour:
   - 10
   - 10
   - 20
-  PercentDamageIncrease: []
+  PercentDamageIncrease:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
