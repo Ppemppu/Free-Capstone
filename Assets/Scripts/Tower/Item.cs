@@ -55,15 +55,25 @@ public class Item : MonoBehaviour
                     TowerUpgradeManager.Instance.UpdateArtifactEffects(towerType, fixedBonus, percentBonus);
                     TowerUpgradeManager.Instance.UpdateAllTowers();
                 }
-
-                
                 break;
+
             case ItemData.ItemType.time:
-                float increaseTime = data.Effective.Length > level ? data.Effective[level] : 0f;
-                WaveSystem.Instance.increaseWaveTime(increaseTime);
+
+                float increase = data.Effective.Length > level ? data.Effective[level] : 0f;
+                if (data.TowerType == "0")
+                {
+                    
+                    WaveSystem.Instance.increaseWaveTime(increase);
+                }
+                else
+                {
+                    PlayerGold.Instance.CurrentGold += (int)Math.Ceiling(increase);
+                }
+                    
                 break;
         }
         level++;
+
 
         if (level == data.Effective.Length)
         {

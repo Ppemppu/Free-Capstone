@@ -7240,8 +7240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eac22ef8b88a19458bf538281aad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  rangeTexture: {fileID: 2800000, guid: 0cf3983d32d454f4fbd6bf6937c06a26, type: 3}
+  radius: 1
+  rangeTexture: {fileID: 2800000, guid: 0a2041b8f040c7c479df7af9e7826fe4, type: 3}
   fieldPrefab: {fileID: 6578735421502921689, guid: c3e33aea2121d2c418aa37dc35b6ac51, type: 3}
   damagePerTick: 0
   tickRate: 0
